@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="Editorial Correction Policy & Error Reporting | ArthaAtlas India"
+  description="Report factual discrepancies, broken citations, or outdated statutory tax rules on ArthaAtlas India. Review policy and transparent changelog standards."
+>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Corrections</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+        Editorial Accountability
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        Correction Policy & Error Reporting
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        Financial legislation and market regulations in India evolve constantly. ArthaAtlas maintains a zero-tolerance policy for outdated tax rules, mathematical inaccuracies, or unverified claims.
+      </p>
+    </div>
+
+    <!-- Error Reporting Protocol -->
+    <section class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 space-y-6">
+      <h2 class="text-2xl font-serif font-bold text-slate-100">How to Report an Inaccuracy</h2>
+      <p class="text-sm text-slate-300 leading-relaxed">
+        If you spot an error in any financial calculation, an outdated statutory rate, an altered regulatory circular, or a broken citation, please notify us immediately:
+      </p>
+
+      <div class="p-6 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs space-y-3">
+        <div class="text-emerald-400 font-semibold text-sm">Direct Editorial Inquiries:</div>
+        <div>
+          Email: <a href="mailto:chirag@oriz.in" class="text-slate-100 hover:text-emerald-400 underline">chirag@oriz.in</a>
+        </div>
+        <div>
+          Subject Line: <span class="text-amber-300">[ArthaAtlas Correction] - Article or Page Title</span>
+        </div>
+      </div>
+
+      <div class="space-y-3 text-sm text-slate-300">
+        <h3 class="font-serif font-bold text-slate-100 text-base">Please Include in Your Report:</h3>
+        <ol class="list-decimal pl-5 space-y-2 text-xs text-slate-400">
+          <li><strong>Page URL:</strong> The exact link to the affected article, calculator, or dataset.</li>
+          <li><strong>Disputed Claim:</strong> The specific sentence, figure, formula, or tax rate in question.</li>
+          <li><strong>Authoritative Source:</strong> A direct link or reference to primary documentation (e.g. Gazette Notification, Income Tax Act section, SEBI circular, RBI notification).</li>
+          <li><strong>Correction Recommendation:</strong> The precise suggested modification and effective date.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Review & Changelog Standards -->
+    <section class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 space-y-4">
+      <h2 class="text-xl font-serif font-bold text-slate-100">Correction Turnaround & Transparency</h2>
+      <div class="space-y-3 text-xs text-slate-400 leading-relaxed">
+        <p>
+          <strong class="text-slate-200">Review Timeline:</strong> Validated statutory discrepancies or formula errors are reviewed and patched within 48 to 72 hours of submission.
+        </p>
+        <p>
+          <strong class="text-slate-200">Public Git Commit History:</strong> Because ArthaAtlas is built as an open, static repository on GitHub (<a href="https://github.com/chirag127/artha-atlas-assets" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline">artha-atlas-assets</a>), every edit, formula adjustment, and tax rule update is permanently recorded with a timestamped cryptographic git commit SHA.
+        </p>
+        <p>
+          <strong class="text-slate-200">Review Dates:</strong> Every research study features an explicit "Last Reviewed Date" metadata tag so readers can instantly verify the currency of the analysis against recent legislative changes.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

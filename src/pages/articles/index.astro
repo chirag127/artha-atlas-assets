@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const allArticles = await getCollection('articles');
+
+// Sort by published date descending
+const sortedArticles = allArticles.sort((a, b) => 
+  new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()
+);
+
+// Collect distinct categories
+const categories = Array.from(new Set(allArticles.map(a => a.data.category)));
+---
+
+<BaseLayout
+  title="Complete Financial Research Library | ArthaAtlas India"
+  description="Explore peer-reviewed Indian investment research studies, quantitative analyses, statutory tax breakdowns, and alternative asset risk underwritings."
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Research Articles</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 shadow-xl">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+          Peer-Reviewed Knowledge Repository
+        </span>
+        <button 
+          onclick="window.dispatchEvent(new CustomEvent('open-search'))"
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono border border-slate-700 transition-colors"
+        >
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          Search Articles (Cmd+K)
+        </button>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        The ArthaAtlas Research Library
+      </h1>
+      <p class="text-lg text-slate-300 max-w-4xl leading-relaxed">
+        {allArticles.length} published in-depth studies covering asset allocation, fixed income duration, P2P default waterfalls, small-cap survivorship bias, Finance Act 2024 taxation, and productive operating assets.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap gap-2 mt-6 pt-6 border-t border-slate-800 text-xs font-mono">
+        <span class="text-slate-500 py-1">Filter by class:</span>
+        {categories.map(cat => (
+          <a 
+            href={`${baseUrl}/assets/${cat}`} 
+            class="px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-emerald-500/10 hover:text-emerald-400 text-slate-300 border border-slate-700/60 transition-colors capitalize"
+          >
+            {cat}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Article Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sortedArticles.map(art => (
+        <a 
+          href={`${baseUrl}/articles/${art.id}`}
+          class="group bg-slate-900/60 border border-slate-800/80 hover:border-emerald-500/40 rounded-xl p-6 transition-all hover:shadow-lg hover:shadow-emerald-950/20 flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono mb-2">
+              <span class="text-emerald-400 uppercase font-semibold">{art.data.category}</span>
+              <span class="text-slate-500">{art.data.readTime}</span>
+            </div>
+            <h2 class="text-lg font-serif font-bold text-slate-100 group-hover:text-emerald-400 transition-colors mb-2">
+              {art.data.title}
+            </h2>
+            <p class="text-xs text-slate-400 line-clamp-3 mb-4 leading-relaxed">
+              {art.data.summary}
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-500">
+            <span>Reviewed: {art.data.lastReviewedDate}</span>
+            <span class="text-emerald-400 font-medium group-hover:translate-x-0.5 transition-transform">Read Study →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

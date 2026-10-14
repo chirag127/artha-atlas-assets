@@ -1,0 +1,91 @@
+---
+title: "Modeling the P2P Default Waterfall: Recovery Rates, Delinquencies and Idle Cash"
+summary: "A quantitative sensitivity analysis of peer-to-peer loan portfolios under base, optimistic and stressed economic scenarios, incorporating delinquency aging and uninvested cash drag."
+seriesId: "p2p-lending-research"
+seriesTitle: "P2P Lending: Returns, Defaults and Recovery"
+readingOrder: 3
+publishedDate: "2026-03-01"
+lastReviewedDate: "2026-10-14"
+author: "Chirag Singhal"
+category: "p2p-lending"
+readTime: "16 min"
+tags: ["P2P Lending", "Quantitative Analysis", "Default Waterfall", "Cash Drag"]
+keyTakeaways:
+  - "Unsecured retail loans that age past 90 days delinquent (DPD 90+) have historical recovery rates below 15%."
+  - "Reinvestment lag (cash drag) typically shaves 100 to 180 basis points off portfolio returns."
+  - "In a macroeconomic downturn (stress scenario), net realized returns in retail P2P frequently turn negative."
+citations:
+  - "RBI Financial Stability Report - Unsecured Retail Credit Delinquency Metrics"
+  - "TransUnion CIBIL Indian Retail Credit Health Index"
+status: "published"
+---
+
+## 1. The Delinquency Aging Curve (DPD Buckets)
+
+In credit risk quantitative modeling, retail loans do not transition from performing to defaulted overnight. They progress through standardized **Days Past Due (DPD)** buckets:
+
+```mermaid
+graph LR
+    Current[Performing: 0 DPD] --> SMA0[SMA-0: 1 to 30 DPD]
+    SMA0 --> SMA1[SMA-1: 31 to 60 DPD]
+    SMA1 --> SMA2[SMA-2: 61 to 90 DPD]
+    SMA2 --> NPA[NPA / Default: 90+ DPD]
+    NPA --> WriteOff[Loss Asset / Write-off: 180+ DPD]
+```
+
+### Empirical Recovery Probabilities by Bucket:
+
+| DPD Stage | Classification | Historical Resolution Probability | Expected Loss on Principal |
+| :--- | :--- | :--- | :--- |
+| **1 – 30 Days** | Soft Delinquency (Technical delay/salary timing) | $82.0\%$ recovers to current | $2.5\%$ |
+| **31 – 60 Days** | Moderate Delinquency (Cashflow shortfall) | $45.0\%$ recovers | $15.0\%$ |
+| **61 – 90 Days** | Severe Delinquency | $18.0\%$ recovers | $45.0\%$ |
+| **90+ Days** | Gross Non-Performing Asset (GNPA) | $< 12.0\%$ recovery rate | **$88.0\% - 95.0\%$ Loss** |
+
+---
+
+## 2. Sensitivity Analysis: Optimistic, Base, and Stressed Scenarios
+
+To illustrate the fragility of P2P yields, we model a ₹10,00,000 portfolio across three economic regimes:
+
+$$
+Net Yield = (1 - c_{idle}) \cdot r - D \cdot (1 - R) - F_{fee}
+$$
+
+| Variable | Optimistic Scenario | Base Case Scenario | Stressed Recession Scenario |
+| :--- | :--- | :--- | :--- |
+| **Contractual Headline Rate ($r$)** | $13.0\%$ | $12.0\%$ | $11.0\%$ |
+| **Uninvested Cash Drag ($c_{idle}$)** | $4.0\%$ | $8.0\%$ | $15.0\%$ (borrower demand drops) |
+| **Gross Default Rate ($D$)** | $2.5\%$ | $5.0\%$ | **$11.5\%$** (job losses/downturn) |
+| **Principal Recovery Rate ($R$)** | $30.0\%$ | $18.0\%$ | **$8.0\%$** |
+| **Platform Servicing Fee ($F$)** | $1.25\%$ | $1.50\%$ | $1.75\%$ (escalated legal costs) |
+| **Net Realized Pre-Tax Return** | **$9.48\%$** | **$5.44\%$** | **$-3.06\%$ (CAPITAL LOSS)** |
+| **Post-Tax Return (30% slab)** | **$5.42\%$** | **$1.70\%$** | **$-6.80\%$** |
+
+```mermaid
+pie title Base Case Yield Breakdown on ₹10 Lakh P2P Portfolio
+    "Net Post-Tax Profit" : 17
+    "Income Tax on Gross Interest" : 37
+    "Principal Lost to Defaults" : 41
+    "Platform Servicing Fees" : 15
+```
+
+---
+
+## 3. The Uninvested Cash Drag Formula
+
+When a borrower repays an installment, that cash arrives in the lender's escrow wallet. Until the algorithm redeploys that money into another verified borrower, it earns **0.0% interest**.
+
+The effective annual drag on total portfolio yield is given by:
+
+$$
+\Delta Y_{drag} = r_{contractual} \times c_{idle}
+$$
+
+For a portfolio yielding $12\%$ with an average $10\%$ idle cash allocation throughout the year, the investor automatically loses:
+
+$$
+\Delta Y_{drag} = 0.12 \times 0.10 = 0.012 \implies \mathbf{1.20\%  annual yield drag}
+$$
+
+Over a 5-year tenure, this silent drag erodes ₹60,000 in compound wealth that never appears on promotional brochures.

@@ -1,0 +1,50 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const allArticles = await getCollection('articles');
+  // Sort by series and readingOrder
+  allArticles.sort((a, b) => a.data.readingOrder - b.data.readingOrder);
+
+  return allArticles.map((article) => {
+    // Determine previous and next articles in the same series
+    const seriesArticles = allArticles.filter((a) => a.data.seriesId === article.data.seriesId);
+    const currentIndex = seriesArticles.findIndex((a) => a.id === article.id);
+    const prev = currentIndex > 0 ? seriesArticles[currentIndex - 1] : null;
+    const next = currentIndex < seriesArticles.length - 1 ? seriesArticles[currentIndex + 1] : null;
+
+    return {
+      params: { slug: article.id.replace(/\.mdx?$/, '') },
+      props: {
+        article,
+        prevArticle: prev ? { slug: prev.id.replace(/\.mdx?$/, ''), title: prev.data.title } : undefined,
+        nextArticle: next ? { slug: next.id.replace(/\.mdx?$/, ''), title: next.data.title } : undefined,
+      },
+    };
+  });
+}
+
+const { article, prevArticle, nextArticle } = Astro.props;
+const { Content } = await render(article);
+---
+
+<ArticleLayout
+  title={article.data.title}
+  summary={article.data.summary}
+  seriesId={article.data.seriesId}
+  seriesTitle={article.data.seriesTitle}
+  readingOrder={article.data.readingOrder}
+  publishedDate={article.data.publishedDate}
+  lastReviewedDate={article.data.lastReviewedDate}
+  author={article.data.author}
+  category={article.data.category}
+  readTime={article.data.readTime}
+  tags={article.data.tags}
+  keyTakeaways={article.data.keyTakeaways}
+  citations={article.data.citations}
+  prevArticle={prevArticle}
+  nextArticle={nextArticle}
+>
+  <Content />
+</ArticleLayout>

@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="Quantitative Methodology & Research Standards | ArthaAtlas India"
+  description="Mathematical equations, modeling standards, and research methodology behind ArthaAtlas India financial tools, calculators, and tax engines."
+>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Methodology</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+        Mathematical & Research Integrity
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        Research & Calculation Methodology
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        The ArthaAtlas platform is built on first-principles financial mathematics, statutory tax legislation, and empirical risk analysis. We operate with zero hidden marketing motives, zero commercial affiliate promotions, and zero data fabrication.
+      </p>
+    </div>
+
+    <!-- Section 1: Financial Mathematics Standards -->
+    <section class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 space-y-6">
+      <h2 class="text-2xl font-serif font-bold text-slate-100">1. Financial Mathematics Standards</h2>
+      
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+        <p>
+          <strong class="text-slate-100">Compounded Annual Growth Rate (CAGR):</strong> Computed using the exact exponential formulation rather than arithmetic averaging:
+        </p>
+        <div class="p-4 rounded-lg bg-slate-950 font-mono text-xs text-emerald-400">
+          CAGR = (Ending Value / Beginning Value)^(1 / n) - 1
+        </div>
+
+        <p>
+          <strong class="text-slate-100">Inflation-Adjusted Real Returns:</strong> Simple subtraction of inflation from nominal return ($r - \pi$) introduces systematic error over long horizons. ArthaAtlas strictly implements the Fisher equation:
+        </p>
+        <div class="p-4 rounded-lg bg-slate-950 font-mono text-xs text-emerald-400">
+          r_real = ((1 + r_nominal) / (1 + inflation_rate)) - 1
+        </div>
+
+        <p>
+          <strong class="text-slate-100">Extended Internal Rate of Return (XIRR):</strong> Irregular cash flows (such as step-up SIPs, dividends, and real estate purchases) are solved numerically using the Newton-Raphson method with second-order bisection fallbacks to guarantee root convergence:
+        </p>
+        <div class="p-4 rounded-lg bg-slate-950 font-mono text-xs text-emerald-400">
+          NPV = Sum(i=1 to N) [ C_i / (1 + r)^((d_i - d_0) / 365) ] = 0
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Taxation Modeling Principles -->
+    <section class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 space-y-6">
+      <h2 class="text-2xl font-serif font-bold text-slate-100">2. Taxation Rules Architecture</h2>
+      
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+        <p>
+          Unlike generic finance websites that hardcode out-of-date tax rates inside component templates, ArthaAtlas implements <strong class="text-slate-100">Tax as Data</strong>. Every rule is represented as a versioned data structure with effective dates and statutory section citations:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-xs text-slate-400">
+          <li><strong>Equities & Equity Mutual Funds:</strong> Section 112A (12.5% LTCG > ₹1.25 Lakh) and Section 111A (20% STCG) as enacted under Finance (No. 2) Act 2024.</li>
+          <li><strong>Debt Mutual Funds:</strong> Section 50AA deeming all capital gains from specified mutual funds (with &le;35% domestic equity) acquired on or after 1 April 2023 as short-term capital gains taxed at slab rates without indexation.</li>
+          <li><strong>Real Estate Indexation Removal:</strong> Implemented with the dual-path grandfathering amendment permitting resident individuals to opt for 20% with indexation if the property was acquired before 23 July 2024.</li>
+          <li><strong>Sovereign Gold Bonds:</strong> Section 47(viic) 100% tax exemption on maturity redemption through RBI.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: The Risk Underwriting Hierarchy -->
+    <section class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 space-y-6">
+      <h2 class="text-2xl font-serif font-bold text-slate-100">3. Risk Underwriting & Default Modeling</h2>
+      
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+        <p>
+          We explicitly reject the false equivalence that high risk guarantees high return. In our alternative credit and P2P lending models:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-xs text-slate-400">
+          <li><strong>Default Drag:</strong> We deduct cumulative default rates from principal recovery.</li>
+          <li><strong>Recovery Timing:</strong> Recoveries are discounted and haircut by platform collection fees (typically 15-25% of recovered amounts).</li>
+          <li><strong>Idle Cash Drag:</strong> We model un-deployed funds earning 0-3% in escrow, reducing effective compounding yield.</li>
+          <li><strong>Tax Asymmetry:</strong> In India, losses on defaulted unsecured loans cannot be offset against capital gains or salary income, creating severe tax friction on gross nominal interest.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: 100% Client-Side Privacy -->
+    <section class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 space-y-6">
+      <h2 class="text-2xl font-serif font-bold text-slate-100">4. Privacy & Zero-Telemetry Commitment</h2>
+      
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+        <p>
+          ArthaAtlas India collects <strong class="text-emerald-400">zero personal financial data</strong>. All calculator operations, portfolio allocations, and tax calculations execute exclusively on your device inside your browser's JavaScript engine.
+        </p>
+        <p>
+          No entered investment amounts, net worth figures, or assumptions are ever transmitted to any remote server or third-party tracking entity.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

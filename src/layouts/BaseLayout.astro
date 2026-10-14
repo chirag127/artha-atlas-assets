@@ -1,0 +1,70 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: string;
+  image?: string;
+}
+
+const {
+  title = 'ArthaAtlas India — The Independent Indian Investment & Asset Allocation Platform',
+  description = 'Explore every asset. Understand every risk. Build better wealth. Independent research encyclopedia covering 13 Indian asset classes, taxation under Finance Act 2024, alternative investments and quantitative portfolio construction.',
+  ogType = 'website',
+  image = `${import.meta.env.BASE_URL}favicon.svg`,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://chirag127.github.io');
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl.href} />
+    <meta name="author" content="Chirag Singhal" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="ArthaAtlas India" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Immediate Theme Initialization to Prevent Flash of Wrong Theme -->
+    <script is:inline>
+      const theme = localStorage.getItem('artha_theme') || 'dark';
+      if (theme === 'light') {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      }
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-[#0a0e17] text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+    <Navbar />
+    <main class="flex-1 w-full">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,253 @@
+[
+  {
+    "id": "indian-investing-foundations",
+    "title": "Indian Investing Foundations",
+    "description": "First-principles mental models, regulatory architecture, and compounding fundamentals for Indian citizens.",
+    "readingOrder": 1,
+    "totalPlannedTopics": 12,
+    "articles": [
+      { "slug": "first-principles-wealth-creation-india", "title": "The First Principles of Long-Term Wealth Creation in India", "status": "published", "readTime": "14 min" },
+      { "slug": "indian-financial-regulatory-architecture", "title": "Mapping the Indian Regulatory Landscape: SEBI, RBI, PFRDA, IRDAI and DICGC", "status": "published", "readTime": "16 min" },
+      { "slug": "the-rupee-compounding-equation", "title": "The Rupee Compounding Equation: Nominal Growth vs Inflation Drag", "status": "published", "readTime": "12 min" },
+      { "slug": "bank-safety-and-dicgc-insurance", "title": "How Safe Is Your Bank? Anatomy of Deposit Insurance and Bank Solvency", "status": "published", "readTime": "15 min" },
+      { "slug": "demat-accounts-and-clearing-mechanics", "title": "Understanding Demat, Depository Participants (NSDL/CDSL) and T+1 Clearing", "status": "planned" },
+      { "slug": "financial-emergency-funds-sizing", "title": "Sizing Your Emergency Buffer: Liquidity Buckets in Modern Urban India", "status": "planned" },
+      { "slug": "retail-investor-rights-in-india", "title": "SCORES 2.0 and Retail Investor Grievance Redressal Mechanisms", "status": "planned" },
+      { "slug": "inflation-hedging-india-history", "title": "The Real Story of CPI Inflation vs Urban Lifestyle Inflation in India", "status": "planned" },
+      { "slug": "direct-vs-regular-plan-compounding", "title": "The ₹1.5 Crore Commission Leak: Direct vs Regular Mutual Fund Plans", "status": "planned" },
+      { "slug": "choosing-financial-advisors-ria", "title": "SEBI Registered Investment Advisors (RIA) vs Commission-Driven Agents", "status": "planned" },
+      { "slug": "nomination-and-estate-planning-india", "title": "Nomination vs Will in Indian Law: Why Nominees Are Only Trustees", "status": "planned" },
+      { "slug": "power-of-staying-invested-cycle", "title": "Missing the 10 Best Days on the NSE: Empirical Evidence from 2000 to 2025", "status": "planned" }
+    ]
+  },
+  {
+    "id": "p2p-lending-research",
+    "title": "P2P Lending: Returns, Defaults and Recovery",
+    "description": "Independent empirical dissection of NBFC-P2P platforms, borrower underwriting, credit defaults, cash drag, and RBI regulatory guardrails.",
+    "readingOrder": 2,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "anatomy-of-p2p-lending-india", "title": "The Anatomy of P2P Lending in India: Why Contractual Yield != Realised Return", "status": "published", "readTime": "18 min" },
+      { "slug": "rbi-p2p-regulations-2024-audit", "title": "Deciphering the RBI August 2024 P2P Lending Master Directions and Enforcement", "status": "published", "readTime": "15 min" },
+      { "slug": "default-waterfall-and-cash-drag", "title": "Modeling the P2P Default Waterfall: Recovery Rates, Delinquencies and Idle Cash", "status": "published", "readTime": "16 min" },
+      { "slug": "p2p-taxation-trap-no-loss-offset", "title": "The Severe Indian Tax Trap of P2P Lending: Why Bad Debts Cannot Offset Interest", "status": "published", "readTime": "13 min" },
+      { "slug": "unsecured-vs-secured-alternative-credit", "title": "Unsecured Personal P2P vs Regulated Invoice Discounting: A Comparative Study", "status": "planned" },
+      { "slug": "stress-testing-p2p-portfolios", "title": "Stress Testing Alternative Credit Across Macro Downturns and Rising Unemployment", "status": "planned" },
+      { "slug": "platform-failure-counterparty-risk", "title": "What Happens If a P2P Platform Shuts Down? Bankruptcy Remote Escrows Analyzed", "status": "planned" },
+      { "slug": "credit-scoring-algorithms-p2p", "title": "Deconstructing Proprietary Credit Scoring Algorithms on Indian Fintech Lending Apps", "status": "planned" },
+      { "slug": "borrower-concentration-limits", "title": "Why Spreading ₹5 Lakh Across 1,000 Borrowers Is Mathematically Essential in P2P", "status": "planned" },
+      { "slug": "historical-realised-returns-audit", "title": "Empirical Audit: Audited Historical Investor Cohort Returns Across Major Indian Platforms", "status": "planned" }
+    ]
+  },
+  {
+    "id": "gold-silver-commodities",
+    "title": "Gold, Silver & Commodity Assets",
+    "description": "Rigorous evaluation of physical bullion, Sovereign Gold Bonds, Gold ETFs, making charges, purity spreads, and commodity cycles.",
+    "readingOrder": 3,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "sovereign-gold-bonds-definitive-guide", "title": "The Definitive Guide to Sovereign Gold Bonds (SGB): Mechanics, Math and Tax Exemption", "status": "published", "readTime": "17 min" },
+      { "slug": "physical-gold-vs-gold-etfs-vs-sgb", "title": "Physical Gold vs Gold ETFs vs SGB: Comprehensive Total Cost of Ownership Comparison", "status": "published", "readTime": "16 min" },
+      { "slug": "silver-etfs-industrial-commodity-cycles", "title": "Investing in Silver in India: Solar Demand, Industrial Cycles and Silver ETFs", "status": "published", "readTime": "14 min" },
+      { "slug": "making-charges-and-hallmarking-realities", "title": "The Hidden Costs of Jewelry Gold: BIS Hallmarking, Making Charges and Resale Haircuts", "status": "published", "readTime": "12 min" },
+      { "slug": "gold-as-portfolio-crisis-hedge", "title": "Gold as an Equity Crisis Hedge: 40 Years of Historical Correlation Data in India", "status": "planned" },
+      { "slug": "mcx-commodity-futures-derivatives", "title": "Trading Crude and Metals on MCX: Margin Requirements, Roll Costs and Leverage Risks", "status": "planned" },
+      { "slug": "digital-gold-unregulated-risks", "title": "Why You Should Avoid Unregulated Digital Gold: Legal Ownership and Custodial Spreads", "status": "planned" },
+      { "slug": "central-bank-gold-reserves-rbi", "title": "The RBI Gold Accumulation Strategy and Global De-Dollarization Trends", "status": "planned" },
+      { "slug": "silver-vs-gold-ratio-historical-swings", "title": "The Gold-to-Silver Ratio: Mean Reversion Strategies for Indian Commodity Allocators", "status": "planned" },
+      { "slug": "commodity-taxation-post-finance-act-2024", "title": "Tax Treatment of Physical Metals, ETFs and Fund of Funds Post-July 2024", "status": "planned" }
+    ]
+  },
+  {
+    "id": "indian-investment-taxation",
+    "title": "Indian Investment Taxation",
+    "description": "Comprehensive, versioned statutory tax analysis under the Income Tax Act, 1961 and the landmark Finance (No. 2) Act, 2024.",
+    "readingOrder": 4,
+    "totalPlannedTopics": 12,
+    "articles": [
+      { "slug": "finance-act-2024-capital-gains-overhaul", "title": "The Complete Post-July 2024 Capital Gains Tax Overhaul: Rules, Rates and Impact", "status": "published", "readTime": "19 min" },
+      { "slug": "section-50aa-debt-mutual-fund-taxation", "title": "Section 50AA Decoded: How Debt Funds and Conservative Hybrids Are Taxed", "status": "published", "readTime": "15 min" },
+      { "slug": "real-estate-indexation-removal-amendment", "title": "The Real Estate Tax Amendment: Grandfathering Rules and Choosing Between 12.5% and 20%", "status": "published", "readTime": "16 min" },
+      { "slug": "new-vs-old-tax-regime-for-investors", "title": "New vs Old Tax Regime: Which Is Superior for Wealth Builders and Salaried Employees?", "status": "published", "readTime": "18 min" },
+      { "slug": "tds-and-tcs-comprehensive-guide", "title": "TDS and TCS on Investments: Sections 194A, 194K, 194-IA, 194DA and 206C(1G)", "status": "published", "readTime": "14 min" },
+      { "slug": "tax-loss-harvesting-strategies-india", "title": "Systematic Tax Loss Harvesting on the NSE: Offsetting STCG and LTCG Permitted Rules", "status": "planned" },
+      { "slug": "foreign-assets-schedule-fa-reporting", "title": "Navigating Schedule FA and Form 67: Black Money Act Penalties on Undeclared Foreign Assets", "status": "planned" },
+      { "slug": "reit-and-invit-three-part-taxation", "title": "Deconstructing REIT Cash Distributions: Interest, Dividend, and Repayment of Debt Under Sec 56", "status": "planned" },
+      { "slug": "set-off-and-carry-forward-losses", "title": "Comprehensive Rules for Set-Off and Carry Forward of Capital and Business Losses", "status": "planned" },
+      { "slug": "gifts-and-inheritance-taxation-india", "title": "Tax on Inherited Assets and Financial Gifts from Relatives under Section 56(2)(x)", "status": "planned" },
+      { "slug": "huf-creation-for-tax-optimization", "title": "Hindu Undivided Family (HUF) as a Legal Vehicle for Lawful Investment Tax Planning", "status": "planned" },
+      { "slug": "nri-taxation-on-indian-investments", "title": "NRI Taxation in India: NRE/NRO Accounts, Higher TDS Withholding and DTAA Treaties", "status": "planned" }
+    ]
+  },
+  {
+    "id": "real-estate-reits",
+    "title": "Real Estate, REITs & Property Returns",
+    "description": "Rigorous property economics: rental yields, cap rates, leverage hazards, SEBI REITs, and fractional property syndications.",
+    "readingOrder": 5,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "commercial-reits-vs-direct-property", "title": "Commercial REITs vs Direct Residential Property: The Math of Yield, Liquidity and Friction", "status": "published", "readTime": "18 min" },
+      { "slug": "true-cost-owning-residential-property", "title": "The Hidden Arithmetic of Residential Property: Stamp Duty, Vacancy, Maintenance and Real Yield", "status": "published", "readTime": "16 min" },
+      { "slug": "sebi-sm-reits-fractional-ownership", "title": "SEBI Small & Medium REITs (SM REITs): Transforming Fractional Commercial Ownership", "status": "published", "readTime": "15 min" },
+      { "slug": "home-loan-leverage-math-irr", "title": "The Real Estate Leverage Paradox: How 8.5% Home Loans Alter Your Net Equity IRR", "status": "published", "readTime": "15 min" },
+      { "slug": "commercial-warehousing-industrial-real-estate", "title": "Industrial Warehousing and Grade-A Logistics Parks: Yields, Cap Rates and E-commerce Demand", "status": "planned" },
+      { "slug": "land-and-plots-investment-realities", "title": "Investing in Agricultural Land and Residential Plots: Title Verification, Encroachment and Illiquidity", "status": "planned" },
+      { "slug": "invits-infrastructure-investment-trusts", "title": "Infrastructure Investment Trusts (InvITs): Highway Tolls, Power Transmission and 9%+ Cash Payouts", "status": "planned" },
+      { "slug": "rera-impact-on-buyer-protection", "title": "State RERA Enforcement: Escrow Accounts, Delayed Possession Compensation and Legal Realities", "status": "planned" },
+      { "slug": "rental-yield-dispersion-indian-metros", "title": "Rental Yield Heatmap Across Indian Metros: Why Residential Yields Hover Around 2.5% to 3.5%", "status": "planned" },
+      { "slug": "section-54-and-54ec-property-gains-exemptions", "title": "Saving Tax on Property Sale: Section 54 Reinvestment vs Section 54EC Capital Gain Bonds", "status": "planned" }
+    ]
+  },
+  {
+    "id": "bonds-and-fixed-income",
+    "title": "Bonds, Fixed Income and Credit Risk",
+    "description": "Bond duration, yield curve dynamics, credit ratings, G-Secs, corporate debentures, and debt mutual funds.",
+    "readingOrder": 6,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "bond-duration-convexity-mastery", "title": "Mastering Bond Duration and Convexity: How Interest Rate Changes Dictate Bond Prices", "status": "published", "readTime": "17 min" },
+      { "slug": "rbi-retail-direct-gsecs-sdls", "title": "The Ultimate Guide to RBI Retail Direct: Buying G-Secs, SDLs and T-Bills Directly", "status": "published", "readTime": "16 min" },
+      { "slug": "anatomy-corporate-credit-rating-downgrade", "title": "The Anatomy of a Credit Downgrade: How IL&FS, DHFL and Franklin Templeton Happened", "status": "published", "readTime": "19 min" },
+      { "slug": "perpetual-at1-bonds-risks", "title": "Perpetual AT1 Bonds: Why High Yields Conceal the Catastrophic Risk of Full Principal Write-Off", "status": "published", "readTime": "15 min" },
+      { "slug": "target-maturity-funds-yield-locking", "title": "Target Maturity Debt Funds (TMF): Locking in Fixed Yields with Zero Duration Risk", "status": "planned" },
+      { "slug": "yield-to-maturity-vs-realised-bond-return", "title": "Why Quoted YTM Is Never Guaranteed Realised Return: Reinvestment Rate Risk Explained", "status": "planned" },
+      { "slug": "state-development-loans-sdls-spreads", "title": "State Development Loans (SDLs): Sovereign Guarantees with Higher Yield Spreads", "status": "planned" },
+      { "slug": "tax-free-bonds-secondary-market", "title": "Buying Tax-Free PSU Bonds in the Secondary Market: Yield Calculations and Liquidity", "status": "planned" },
+      { "slug": "floating-rate-savings-bonds-rbi", "title": "RBI Floating Rate Savings Bonds (FRSB): 8.05% Accrual and Re-setting Mechanism", "status": "planned" },
+      { "slug": "covered-bonds-and-structured-ncds", "title": "Covered Bonds and Securitized Debt in India: Ring-Fenced Collateral Structures", "status": "planned" }
+    ]
+  },
+  {
+    "id": "equity-investing-factor-strategies",
+    "title": "Equity Investing & Factor Strategies",
+    "description": "Evidence-based equity research: factor tilts, momentum, quality, low-volatility, small-cap survivorship bias, and valuation discipline.",
+    "readingOrder": 7,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "factor-investing-india-momentum-lowvol", "title": "Factor Investing in India: Empirical Evidence on Momentum, Quality, Value and Low-Volatility", "status": "published", "readTime": "19 min" },
+      { "slug": "small-cap-investing-survivorship-bias", "title": "The Small-Cap Investing Reality: Survivorship Bias, Cyclicality and Illiquidity Traps", "status": "published", "readTime": "16 min" },
+      { "slug": "active-vs-passive-equity-funds-india", "title": "The Great Indian Active vs Passive Debate: SPIVA India Scorecard and Large-Cap Alpha Decay", "status": "published", "readTime": "17 min" },
+      { "slug": "valuation-multiples-pe-pb-roce", "title": "Valuation Discipline in Indian Equities: ROCE, Free Cash Flow Yield, and P/E Mean Reversion", "status": "published", "readTime": "18 min" },
+      { "slug": "demystifying-ipo-investing-hysteria", "title": "Demystifying the IPO Hysteria: Long-Term Post-Listing Performance of Indian Mainboard IPOs", "status": "planned" },
+      { "slug": "dividend-yield-investing-psu-stocks", "title": "The Traps of High Dividend Yield Investing: Value Traps and Capital Depreciation in PSUs", "status": "planned" },
+      { "slug": "equal-weight-index-funds-mechanics", "title": "Nifty 50 Equal Weight vs Market-Cap Weight: Rebalancing Alpha and Sector Balancing", "status": "planned" },
+      { "slug": "turnaround-and-special-situations", "title": "Special Situations in Indian Markets: Delisting Offers, Open Offers, Buybacks and Demergers", "status": "planned" },
+      { "slug": "behavioural-biases-in-equity-investors", "title": "Disposition Effect, Recency Bias and Sunk Cost Fallacy: Overcoming Psychological Traps", "status": "planned" },
+      { "slug": "managing-a-30-stock-concentrated-portfolio", "title": "Building and Managing a 30-Stock High-Conviction Portfolio: Position Sizing and Sell Rules", "status": "planned" }
+    ]
+  },
+  {
+    "id": "retirement-and-government-savings",
+    "title": "Government Savings & Retirement Products",
+    "description": "Comprehensive guide to sovereign-guaranteed schemes: EPF, PPF, NPS, Sukanya Samriddhi, SCSS, and annuity products.",
+    "readingOrder": 8,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "nps-tier-1-complete-architecture", "title": "NPS Tier I Complete Architecture: Asset Classes E, C, G, A, Tax Benefits and Annuity Realities", "status": "published", "readTime": "18 min" },
+      { "slug": "ppf-vs-epf-vs-vpf-detailed-comparison", "title": "PPF vs EPF vs VPF: Interest Rates, Taxability of High Contributions and Lock-in Rules", "status": "published", "readTime": "15 min" },
+      { "slug": "sukanya-samriddhi-and-scss-sovereign-schemes", "title": "Sukanya Samriddhi Yojana (SSY) and Senior Citizens Savings Scheme: The Sovereign Fortress", "status": "published", "readTime": "14 min" },
+      { "slug": "the-annuity-trap-in-indian-retirement", "title": "The Annuity Trap: Why Fixed Nominal Pension Annuities Suffer Catastrophic Inflation Loss", "status": "published", "readTime": "16 min" },
+      { "slug": "epfo-higher-pension-eps-scheme", "title": "The Supreme Court Ruling on EPS-95 Higher Pension: Pros, Cons and Actuarial Calculations", "status": "planned" },
+      { "slug": "fire-movement-in-india-4-percent-rule", "title": "FIRE in India: Adapting the 4% Safe Withdrawal Rule to High-Inflation Emerging Economies", "status": "planned" },
+      { "slug": "national-savings-certificate-nsc-mechanics", "title": "National Savings Certificate (NSC) vs 5-Year Tax Saver Bank FDs: Accrued Interest Taxation", "status": "planned" },
+      { "slug": "gratuity-and-leave-encashment-rules", "title": "Gratuity Act Provisions and Section 10(10) Tax Exemption Limits for Retiring Employees", "status": "planned" },
+      { "slug": "managing-provident-fund-transfers-uan", "title": "UAN Management, EPS Discrepancies and Smooth Online EPF Withdrawal Procedures", "status": "planned" },
+      { "slug": "post-office-monthly-income-scheme-pomis", "title": "Post Office Monthly Income Scheme (POMIS): Joint Limits, Reinvestment and Cashflow Rules", "status": "planned" }
+    ]
+  },
+  {
+    "id": "insurance-and-investment-products",
+    "title": "Insurance & Investment-Linked Products",
+    "description": "Demystifying insurance protection vs investment returns: Pure Term, ULIPs, Endowment policies, and surrender traps.",
+    "readingOrder": 9,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "pure-term-insurance-mastery", "title": "Pure Term Life Insurance Mastery: Coverage Sizing, Riders, MWP Act and Claim Settlement Ratios", "status": "published", "readTime": "16 min" },
+      { "slug": "ulips-vs-mutual-funds-plus-term-insurance", "title": "ULIPs vs Mutual Funds + Term Insurance: Breaking Down Mortality Charges, Admin Fees and Real IRR", "status": "published", "readTime": "17 min" },
+      { "slug": "endowment-and-money-back-irr-reality", "title": "The Endowment Policy Trap: Hand-Calculating the Disappointing 4.5% IRR of Traditional Life Policies", "status": "published", "readTime": "16 min" },
+      { "slug": "section-10-10d-tax-limits-on-insurance", "title": "Section 10(10D) Tax Reform: Taxation of Life Policies with Premiums Over ₹5 Lakhs", "status": "published", "readTime": "13 min" },
+      { "slug": "surrendering-life-insurance-policy", "title": "How to Surrender a Bad Life Insurance Policy: Guaranteed Surrender Value vs Paid-Up Options", "status": "planned" },
+      { "slug": "health-insurance-super-topups-portability", "title": "Comprehensive Health Insurance Strategy: Base Covers, Super Top-Ups, Room Rent Sub-Limits and Portability", "status": "planned" },
+      { "slug": "married-women-property-act-term-cover", "title": "Securing Your Term Insurance via MWP Act (Section 6): Protection from Creditors and Liabilities", "status": "planned" },
+      { "slug": "guaranteed-income-insurance-schemes-debunked", "title": "Guaranteed Return Insurance Products Debunked: Time Value of Money and Real Purchasing Power", "status": "planned" },
+      { "slug": "critical-illness-vs-personal-accident-riders", "title": "Standalone Critical Illness and Personal Accident Covers vs Built-In Insurance Riders", "status": "planned" },
+      { "slug": "irdai-consumer-protection-ombudsman", "title": "Escalating Disputed Insurance Claims to the IRDAI Ombudsman: Process and Legal Rights", "status": "planned" }
+    ]
+  },
+  {
+    "id": "international-investments-lrs",
+    "title": "International Investments & Currency Diversification",
+    "description": "Overseas equity investing under RBI LRS, US brokerage accounts, TCS mechanics, currency depreciation, and international tax reporting.",
+    "readingOrder": 10,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "investing-in-us-stocks-from-india-lrs", "title": "Investing in US Equities from India via LRS: A Step-by-Step Practical & Legal Playbook", "status": "published", "readTime": "18 min" },
+      { "slug": "lrs-tcs-foreign-withholding-dtaa-form67", "title": "LRS TCS, 25% US Dividend Withholding, and Claiming Foreign Tax Credit via Form 67 and DTAA", "status": "published", "readTime": "17 min" },
+      { "slug": "currency-depreciation-rupee-vs-usd", "title": "The INR vs USD Compounding Dynamic: 40 Years of Historical Rupee Depreciation Analyzed", "status": "published", "readTime": "14 min" },
+      { "slug": "international-mutual-funds-sebi-limit", "title": "The Status of International Mutual Funds in India: SEBI Overseas Industry Caps and Alternatives", "status": "published", "readTime": "15 min" },
+      { "slug": "sipc-insurance-us-brokerage-protection", "title": "SIPC Protection in US Brokerage Accounts: What Happens If an Overseas Partner Fails?", "status": "planned" },
+      { "slug": "global-etfs-geographical-diversification", "title": "Total World Stock Index (VT) vs S&P 500: True Global Diversification for Indian Residents", "status": "planned" },
+      { "slug": "fx-spreads-and-wire-transfer-costs", "title": "Optimizing Telegraphic Transfer (A2 Outward Remittance) Costs: Bank Spreads vs Fintech Platforms", "status": "planned" },
+      { "slug": "us-estate-tax-risk-for-indian-residents", "title": "The $60,000 US Estate Tax Exemption Trap for Non-Resident Aliens Holding US Assets", "status": "planned" },
+      { "slug": "gift-city-ifsca-direct-foreign-investing", "title": "GIFT City IFSCA International Exchanges: Investing in US Stocks from India's Offshore Financial Centre", "status": "planned" },
+      { "slug": "foreign-currency-fixed-deposits-fcnr", "title": "FCNR (B) Deposits: Foreign Currency Term Deposits for Returning NRIs and Cross-Border Families", "status": "planned" }
+    ]
+  },
+  {
+    "id": "alternative-and-private-markets",
+    "title": "Alternative Investments & Private Markets",
+    "description": "SEBI-regulated AIFs, venture capital, angel investing, unlisted pre-IPO shares, and high-risk alternative asset structures.",
+    "readingOrder": 11,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "unlisted-shares-pre-ipo-investing-risks", "title": "Investing in Unlisted Pre-IPO Shares in India: Liquidity Traps, Price Discovery and Valuation Realities", "status": "published", "readTime": "17 min" },
+      { "slug": "sebi-aif-regulations-category-1-2-3", "title": "SEBI Alternative Investment Funds (AIF): Structures, Taxation, Hurdle Rates and ₹1 Crore Minimum Tickets", "status": "published", "readTime": "16 min" },
+      { "slug": "angel-investing-syndicates-startup-equity", "title": "Angel Investing and Startup Syndicates in India: Power Law Returns, Dilution and Total Loss Probability", "status": "published", "readTime": "17 min" },
+      { "slug": "employee-stock-options-esops-tax-wealth", "title": "ESOP Wealth Creation and Taxation: Perquisite Tax on Exercise vs Capital Gains on Liquidity", "status": "published", "readTime": "15 min" },
+      { "slug": "private-credit-and-venture-debt-funds", "title": "Private Credit and Venture Debt in India: Senior Secured Lending with Equity Warrants", "status": "planned" },
+      { "slug": "litigation-financing-and-royalty-funds", "title": "Emerging Alternative Structures: Royalty Streams, Intellectual Property and Revenue Financing", "status": "planned" },
+      { "slug": "distressed-debt-arc-insolvency-ibc", "title": "Asset Reconstruction Companies (ARCs) and IBC Bankruptcy Distress Investing in India", "status": "planned" },
+      { "slug": "equipment-leasing-fractional-ventures", "title": "Equipment Leasing and Asset-Backed Financing: Operational Risk, Depreciation and Corporate Credit", "status": "planned" },
+      { "slug": "renewable-energy-solar-ppa-investing", "title": "Commercial Rooftop Solar and Green Energy PPAs: IRR, Discom Counterparty Risk and Degression", "status": "planned" },
+      { "slug": "due-diligence-checklist-unregulated-platforms", "title": "The Antidote to Hype: A 20-Point Due Diligence Checklist for Any High-Yield Alternative Opportunity", "status": "planned" }
+    ]
+  },
+  {
+    "id": "derivatives-quantitative-finance",
+    "title": "Derivatives & Quantitative Finance",
+    "description": "Mathematical options mechanics, defined-risk spreads, Greeks, margin rules, and systematic risk management.",
+    "readingOrder": 12,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "why-93-percent-fno-traders-lose-money-sebi", "title": "Why 93% of Retail Derivative Traders Lose Money: The Hard Mathematics Behind SEBI's Study", "status": "published", "readTime": "18 min" },
+      { "slug": "defined-risk-option-spreads-vs-naked-buying", "title": "Defined-Risk Option Spreads vs Naked Speculation: Vertical Spreads, Iron Condors and Math", "status": "published", "readTime": "17 min" },
+      { "slug": "the-greeks-demystified-for-options", "title": "The Options Greeks Demystified: Delta, Gamma, Theta Decay and Vega Volatility on NSE Contracts", "status": "published", "readTime": "16 min" },
+      { "slug": "covered-calls-on-blue-chip-holdings", "title": "Systematic Covered Calls: Monetizing Idle Portfolio Volatility Without Uncapped Tail Risk", "status": "published", "readTime": "15 min" },
+      { "slug": "statistical-arbitrage-pairs-trading", "title": "Statistical Arbitrage and Pairs Trading on Indian Large-Caps: Cointegration vs Simple Correlation", "status": "planned" },
+      { "slug": "portfolio-hedging-nifty-puts", "title": "Cost-Effective Tail-Risk Hedging: Buying OTM Nifty Put Options During Market Euphoria", "status": "planned" },
+      { "slug": "volatility-clustering-and-garch-modeling", "title": "Volatility Clustering on Dalal Street: Modeling India VIX Swings and Regime Changes", "status": "planned" },
+      { "slug": "algorithmic-trading-compliance-sebi", "title": "SEBI Algorithmic Trading Framework: API Orders, Exchange Approvals and Latency Realities", "status": "planned" },
+      { "slug": "futures-basis-and-roll-spreads", "title": "Understanding Futures Premium, Roll Spreads and Cash-Futures Arbitrage Returns", "status": "planned" },
+      { "slug": "kelly-criterion-and-position-sizing", "title": "The Kelly Criterion and Optimal Fractional Position Sizing for Systematic Indian Investors", "status": "planned" }
+    ]
+  },
+  {
+    "id": "productive-businesses-operating-assets",
+    "title": "Productive Businesses & Operating Assets",
+    "description": "Entrepreneurship, manufacturing economics, food/feed processing, working capital cycles, and ROIC vs paper investments.",
+    "readingOrder": 13,
+    "totalPlannedTopics": 10,
+    "articles": [
+      { "slug": "investing-in-operating-businesses-roic-vs-stocks", "title": "Investing in Operating Businesses vs Financial Assets: The Superior Compounding of ROIC", "status": "published", "readTime": "19 min" },
+      { "slug": "small-manufacturing-unit-economics", "title": "Anatomy of an Indian Small Manufacturing Enterprise: Capex, Working Capital and Operating Margins", "status": "published", "readTime": "18 min" },
+      { "slug": "cattle-feed-and-agro-processing-case-study", "title": "Agro-Processing & Feed Manufacturing: Raw Material Cycles, Quality Control and B2B Receivables", "status": "published", "readTime": "17 min" },
+      { "slug": "government-subsidies-and-msme-schemes", "title": "The Truth About Government Subsidies: Central/State MSME Incentives, Timing and Clawback Realities", "status": "published", "readTime": "16 min" },
+      { "slug": "working-capital-cycle-management", "title": "Managing the Cash Conversion Cycle: Why Profitable Small Businesses Go Bankrupt from Delayed Receivables", "status": "planned" },
+      { "slug": "franchise-business-economics-india", "title": "Buying an Indian Franchise: Food, Retail and Healthcare Unit Economics and Royalty Fees", "status": "planned" },
+      { "slug": "digital-products-and-b2b-saas-economics", "title": "Bootstrapping a Digital Product or Micro-SaaS in India: High Gross Margins and Global Dollar Revenues", "status": "planned" },
+      { "slug": "key-person-dependence-and-succession", "title": "Mitigating Key-Person Dependency and Building Delegation Systems in Founder-Led Companies", "status": "planned" },
+      { "slug": "commercial-warehousing-development-economics", "title": "Developing Commercial Warehouses: Land Conversion, PEB Structures and Long-Term Leases", "status": "planned" },
+      { "slug": "selling-a-small-business-in-india", "title": "Valuing and Selling an Unlisted Operating Business: EBITDA Multiples and Asset Sale vs Share Sale", "status": "planned" }
+    ]
+  }
+]

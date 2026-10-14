@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComparisonEngine from '../components/compare/ComparisonEngine';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="Interactive Investment Comparison Engine | ArthaAtlas India"
+  description="Multi-dimensional comparison engine for 35+ Indian investment instruments across 25+ parameters: risk, historical returns, Finance Act 2024 taxation, liquidity, drawdowns, and regulatory frameworks."
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Compare Investments</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 mb-10 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+        Decision Engineering Matrix
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        Indian Investment Comparison Engine
+      </h1>
+      <p class="text-lg text-slate-300 max-w-4xl leading-relaxed">
+        Compare any two or more Indian investment instruments side-by-side across 25+ quantitative and qualitative dimensions. Filter by regulatory body, risk profile, liquidity horizon, and download complete comparison datasets in CSV or JSON format.
+      </p>
+    </div>
+
+    <!-- Client Island for Comparison Engine -->
+    <ComparisonEngine client:load />
+
+    <!-- Comparison Methodology Note -->
+    <div class="mt-16 bg-slate-900/60 border border-slate-800 rounded-xl p-6 font-mono text-xs text-slate-400 space-y-3">
+      <h3 class="text-slate-200 font-bold uppercase tracking-wider text-sm font-serif">Data Sources & Methodological Standards</h3>
+      <p>
+        <strong class="text-slate-300">Historical Return Data:</strong> Return ranges reflect trailing 10-15 year rolling historical ranges or statutory coupon rates from official exchange disclosures (NSE, BSE), AMFI mutual fund categorisation benchmarks, and RBI publications.
+      </p>
+      <p>
+        <strong class="text-slate-300">Tax Classifications:</strong> All tax treatments reflect the enacted provisions of the Finance (No. 2) Act 2024 (effective July 23, 2024), including Section 112A (12.5% LTCG on equities), Section 50AA (specified mutual funds taxed at slab rates), and Section 47(viic) for SGB redemptions.
+      </p>
+    </div>
+  </main>
+</BaseLayout>

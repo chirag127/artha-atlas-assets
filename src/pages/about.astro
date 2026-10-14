@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="About the Author & Initiative | ArthaAtlas India"
+  description="Learn about ArthaAtlas India, an independent educational research initiative created by Chirag Singhal. Editorial standards, source verification, and reader support."
+>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">About</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+        Author Profile & Purpose
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        About ArthaAtlas India
+      </h1>
+      <p class="text-lg text-slate-300 leading-relaxed">
+        An independent, static-first financial research encyclopedia and quantitative decision laboratory dedicated to demystifying the Indian investment, taxation, and alternative asset landscape.
+      </p>
+    </div>
+
+    <!-- About the Author -->
+    <section class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 space-y-6">
+      <h2 class="text-2xl font-serif font-bold text-slate-100">About the Author</h2>
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+        <p>
+          ArthaAtlas India is created, curated, and maintained by <strong class="text-slate-100">Chirag Singhal</strong>.
+        </p>
+        <p>
+          The motivation behind this project stems from a glaring gap in the Indian financial content ecosystem: retail investors are flooded with promotional fintech marketing, influencer soundbites, and simplified rules-of-thumb, while rigorous quantitative tools, legislative tax realities, and structural failure modes remain locked behind institutional paywalls or dense regulatory circulars.
+        </p>
+        <p>
+          ArthaAtlas is built as an open, accessible public-good encyclopedia. It presents the entire financial spectrum—from liquid treasury bills to alternative credit, unlisted equities, and small business manufacturing—using first-principles mathematics, statutory tax clarity, and transparent risk disclosures.
+        </p>
+      </div>
+
+      <!-- Author Contact & Links Grid -->
+      <div class="pt-4 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs">
+        <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+          <span class="text-slate-500 block mb-1">Direct Inquiries & Feedback</span>
+          <a href="mailto:chirag@oriz.in" class="text-emerald-400 hover:underline font-semibold">
+            chirag@oriz.in
+          </a>
+        </div>
+        <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+          <span class="text-slate-500 block mb-1">Social Profile</span>
+          <a href="https://facebook.com/singhal127" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline font-semibold">
+            singhal127 on Facebook
+          </a>
+        </div>
+        <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800/80">
+          <span class="text-slate-500 block mb-1">Voluntary Reader Support</span>
+          <a href="https://buymeacoffee.com/chirag127" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline font-semibold">
+            Buy Me a Coffee ☕
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support the Project Notice -->
+    <section class="bg-amber-950/20 border border-amber-900/40 rounded-xl p-6 text-sm text-slate-300 space-y-3">
+      <h3 class="text-amber-400 font-serif font-bold text-lg">Support Independent Financial Research</h3>
+      <p class="leading-relaxed text-xs">
+        ArthaAtlas India has zero advertising, zero sponsored articles, zero affiliate sales commissions, and zero paywalls. If our research, interactive calculators, or tax analyses have helped you make more informed decisions, you can support ongoing hosting, data verification, and research tooling via:
+      </p>
+      <div class="pt-2">
+        <a 
+          href="https://buymeacoffee.com/chirag127" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs font-mono transition-colors"
+        >
+          ☕ Support on Buy Me a Coffee
+        </a>
+      </div>
+      <p class="text-[11px] text-slate-500 mt-2 italic">
+        Note: Financial support is purely voluntary and does not constitute fees for investment advice, nor does it provide access to privileged trading signals or recommendations.
+      </p>
+    </section>
+
+    <!-- Regulatory Disclosure & Disclaimer -->
+    <section class="bg-slate-900/60 border border-slate-800 rounded-xl p-8 space-y-4">
+      <h2 class="text-xl font-serif font-bold text-slate-100">Statutory Disclosure & Risk Warning</h2>
+      <div class="space-y-3 text-xs text-slate-400 leading-relaxed">
+        <p>
+          <strong class="text-slate-200">Educational & Research Purpose Only:</strong> The content, calculators, simulators, and comparisons on ArthaAtlas India are published solely for general financial education and quantitative research.
+        </p>
+        <p>
+          <strong class="text-slate-200">Not a SEBI Registered Investment Advisor (RIA):</strong> Neither Chirag Singhal nor ArthaAtlas India is registered with the Securities and Exchange Board of India (SEBI) as a Research Analyst or Investment Adviser under SEBI (Investment Advisers) Regulations, 2013. Nothing on this website constitutes personalized financial advice, wealth management recommendations, tax opinions, or solicitation to purchase or sell any securities.
+        </p>
+        <p>
+          <strong class="text-slate-200">Capital Loss Warning:</strong> Securities and alternative investments are subject to market risks, credit defaults, liquidity freezes, and permanent impairment. Past historical returns are no guarantee of future results. Consult a qualified, fee-only SEBI Registered Investment Adviser and a Chartered Accountant before allocating capital.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

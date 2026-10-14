@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SIPCalculator from '../../components/calculators/SIPCalculator';
+import SWPCalculator from '../../components/calculators/SWPCalculator';
+import P2PRealisedReturnCalculator from '../../components/calculators/P2PRealisedReturnCalculator';
+import RentalYieldCalculator from '../../components/calculators/RentalYieldCalculator';
+import PostTaxComparisonCalculator from '../../components/calculators/PostTaxComparisonCalculator';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="Financial Calculators & Quantitative Models | ArthaAtlas India"
+  description="Precision Indian financial calculators: Step-up SIP with inflation drag, SWP corpus sustainability, P2P default waterfall, real estate leveraged IRR, and Finance Act 2024 post-tax return radar."
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Financial Calculators</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+        Pure Client-Side Financial Engineering
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        The ArthaAtlas Quantitative Calculator Suite
+      </h1>
+      <p class="text-lg text-slate-300 max-w-4xl leading-relaxed">
+        Zero promotional assumptions. All formulas are mathematically verified, handle real inflation drags, model statutory tax cuts under the Finance Act 2024, and run locally in your browser with 100% data privacy.
+      </p>
+
+      <!-- Quick Jump Anchor Bar -->
+      <div class="flex flex-wrap gap-2 mt-6 pt-6 border-t border-slate-800 text-xs font-mono">
+        <a href="#sip" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">
+          Step-Up SIP & Real Return ↓
+        </a>
+        <a href="#swp" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">
+          SWP Retirement Depletion ↓
+        </a>
+        <a href="#p2p" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">
+          P2P Default Waterfall ↓
+        </a>
+        <a href="#rental" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">
+          Property Cap Rate & IRR ↓
+        </a>
+        <a href="#tax" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">
+          Post-Tax Return Radar ↓
+        </a>
+      </div>
+    </div>
+
+    <!-- Calculator 1: SIP -->
+    <section id="sip" class="scroll-mt-20">
+      <div class="border-b border-slate-800 pb-4 mb-8">
+        <span class="text-xs font-mono uppercase tracking-wider text-emerald-400">Model 01</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Step-Up SIP & Purchasing Power Calculator</h2>
+        <p class="text-sm text-slate-400">Models real wealth creation incorporating inflation drag and annual salary increments.</p>
+      </div>
+      <SIPCalculator client:load />
+    </section>
+
+    <!-- Calculator 2: SWP -->
+    <section id="swp" class="scroll-mt-20">
+      <div class="border-b border-slate-800 pb-4 mb-8">
+        <span class="text-xs font-mono uppercase tracking-wider text-emerald-400">Model 02</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Systematic Withdrawal Plan (SWP) Depletion Model</h2>
+        <p class="text-sm text-slate-400">Calculates retirement portfolio longevity under periodic withdrawals and market volatility.</p>
+      </div>
+      <SWPCalculator client:load />
+    </section>
+
+    <!-- Calculator 3: P2P -->
+    <section id="p2p" class="scroll-mt-20">
+      <div class="border-b border-slate-800 pb-4 mb-8">
+        <span class="text-xs font-mono uppercase tracking-wider text-rose-400">Model 03</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-100">P2P Realised Return & Default Waterfall Simulator</h2>
+        <p class="text-sm text-slate-400">Deconstructs headline 12-14% interest rates against cumulative loan defaults, recovery timing, idle cash, and slab taxes.</p>
+      </div>
+      <P2PRealisedReturnCalculator client:load />
+    </section>
+
+    <!-- Calculator 4: Rental Property -->
+    <section id="rental" class="scroll-mt-20">
+      <div class="border-b border-slate-800 pb-4 mb-8">
+        <span class="text-xs font-mono uppercase tracking-wider text-cyan-400">Model 04</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Real Estate Rental Yield & Leveraged Equity IRR</h2>
+        <p class="text-sm text-slate-400">Accurately calculates net cap rate, maintenance costs, vacancy drag, mortgage leverage, and Finance Act 2024 LTCG.</p>
+      </div>
+      <RentalYieldCalculator client:load />
+    </section>
+
+    <!-- Calculator 5: Post-Tax Radar -->
+    <section id="tax" class="scroll-mt-20">
+      <div class="border-b border-slate-800 pb-4 mb-8">
+        <span class="text-xs font-mono uppercase tracking-wider text-amber-400">Model 05</span>
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Finance Act 2024 Multi-Asset Post-Tax Return Radar</h2>
+        <p class="text-sm text-slate-400">Interactive comparison of net in-hand returns across equities, mutual funds, debt, gold, FDs, and P2P lending.</p>
+      </div>
+      <PostTaxComparisonCalculator client:load />
+    </section>
+  </main>
+</BaseLayout>

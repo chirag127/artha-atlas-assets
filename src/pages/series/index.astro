@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import seriesData from '../../data/seriesRoadmap.json';
+import { getCollection } from 'astro:content';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const allArticles = await getCollection('articles');
+
+const totalPlanned = seriesData.reduce((acc, s) => acc + s.totalPlannedTopics, 0);
+---
+
+<BaseLayout
+  title="Editorial Research Roadmap & Series | ArthaAtlas India"
+  description="Structured 300+ topic research roadmap organized into 13 systematic Indian investment series. Transparent editorial pipeline, prerequisites, and publication progression."
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Research Series</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+        Open Editorial Architecture
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        The 13 Flagship Research Series
+      </h1>
+      <p class="text-lg text-slate-300 max-w-4xl leading-relaxed">
+        Rather than publishing disjointed blog posts, ArthaAtlas organizes financial research into structured, sequential reading series. Each series guides the reader from foundational mechanics to advanced quantitative models and regulatory audits.
+      </p>
+
+      <div class="mt-6 pt-6 border-t border-slate-800 flex flex-wrap gap-6 font-mono text-xs">
+        <div>
+          <span class="text-slate-500">Total Planned Topics:</span>
+          <span class="text-emerald-400 font-bold ml-1">{totalPlanned}+ Articles</span>
+        </div>
+        <div>
+          <span class="text-slate-500">Currently Published:</span>
+          <span class="text-slate-200 font-bold ml-1">{allArticles.length} Flagship Studies</span>
+        </div>
+        <div>
+          <span class="text-slate-500">Peer-Review Standard:</span>
+          <span class="text-slate-200 font-bold ml-1">Statutory & Mathematical Verification</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Series Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {seriesData.map((series, idx) => {
+        // Count published articles for this series
+        const publishedInSeries = allArticles.filter(art => art.data.seriesId === series.id);
+
+        return (
+          <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono mb-2">
+                <span class="text-emerald-400 font-semibold">Series {String(idx + 1).padStart(2, '0')}</span>
+                <span class="text-slate-500">{series.totalPlannedTopics} Planned</span>
+              </div>
+              <h2 class="text-xl font-serif font-bold text-slate-100 mb-2">
+                {series.title}
+              </h2>
+              <p class="text-xs text-slate-400 mb-4 leading-relaxed line-clamp-3">
+                {series.description}
+              </p>
+
+              <div class="mb-4">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-slate-500 block mb-2">Curated Topics (Sample)</span>
+                <ul class="text-xs text-slate-300 space-y-1 font-mono">
+                  {series.articles.slice(0, 3).map(art => (
+                    <li class="truncate flex items-center gap-1.5">
+                      <span class={`w-1.5 h-1.5 rounded-full ${art.status === 'published' ? 'bg-emerald-400' : 'bg-slate-600'}`}></span>
+                      <span>{art.title}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-400">
+                Published: <strong class="text-emerald-400">{publishedInSeries.length}</strong>
+              </span>
+              <a 
+                href={`${baseUrl}/series/${series.id}`} 
+                class="text-emerald-400 hover:text-emerald-300 font-medium"
+              >
+                View Series Curriculum →
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </main>
+</BaseLayout>

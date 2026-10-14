@@ -1,0 +1,75 @@
+---
+title: "LRS TCS, 25% US Dividend Withholding, and Claiming Foreign Tax Credit via Form 67 and DTAA"
+summary: "A masterclass in international tax optimization for Indian investors holding US securities: navigating 20% LRS TCS, 25% US dividend withholding tax, and Form 67 Double Taxation Avoidance Agreement (DTAA) credits."
+seriesId: "international-investments-lrs"
+seriesTitle: "International Investments & Currency Diversification"
+readingOrder: 2
+publishedDate: "2026-10-12"
+lastReviewedDate: "2026-10-14"
+author: "Chirag Singhal"
+category: "international-investments"
+readTime: "17 min"
+tags: ["LRS TCS", "US Dividend Tax", "DTAA", "Form 67", "Foreign Tax Credit"]
+keyTakeaways:
+  - "Section 206C(1G) imposes 20% TCS on overseas remittances exceeding ₹7 Lakhs per financial year, adjustable against advance tax."
+  - "US-India DTAA reduces US dividend withholding tax from the statutory 30% down to 25% upon filing Form W-8BEN."
+  - "Foreign Tax Credit (FTC) under Section 90 can be claimed in India by filing Form 67 before the ITR due date."
+citations:
+  - "India-US Double Tax Avoidance Agreement (DTAA) - Article 10 (Dividends) & Article 25 (Relief from Double Taxation)"
+  - "Income Tax Act, 1961 - Section 206C(1G) & Rule 128 (Form 67)"
+status: "published"
+---
+
+## 1. Demystifying the 20% LRS TCS: Cash Flow vs Real Tax
+
+Under **Section 206C(1G)** of the Income Tax Act, 1961, when an Indian resident remits funds abroad for investment under the Liberalised Remittance Scheme:
+- **Threshold Exemption:** Remittances up to **₹7,00,000 per financial year** attract **0% TCS**.
+- **Above ₹7 Lakhs:** The remitting bank is statutorily mandated to collect **$20\%$ Tax Collected at Source (TCS)** on the incremental amount.
+
+```mermaid
+graph TD
+    Remit[Remittance of ₹12,00,000 via LRS] --> Split1[First ₹7,00,000: 0% TCS = ₹0]
+    Remit --> Split2[Excess ₹5,00,000: 20% TCS = ₹1,00,000]
+    
+    Split2 --> BankDeduct[Bank Deducts ₹1,00,000 TCS and deposits with CBDT]
+    BankDeduct --> 26AS[TCS Reflects in Form 26AS / AIS]
+    26AS --> Adjustment[Investor Adjusts against Advance Tax or Claims Full Refund in ITR]
+```
+
+### The Crucial Takeaway:
+**TCS is NOT an additional expense or final tax!** It is an advance payment credited directly against your PAN. When you file your annual ITR, that ₹1,00,000 TCS directly reduces your regular Indian income tax liability, or is **refunded to your bank account with interest**.
+
+---
+
+## 2. US Dividend Withholding Tax: Form W-8BEN and DTAA Article 10
+
+When a US corporation (e.g. Apple, Microsoft, Procter & Gamble) distributes a cash dividend to an Indian resident:
+1. Under US Internal Revenue Code (IRC), non-resident alien dividend withholding tax is standard **$30\%$**.
+2. However, under the **US-India Double Tax Avoidance Agreement (DTAA) Article 10**, this withholding rate is lowered to **$25\%$**.
+3. **Form W-8BEN:** When you open your US brokerage account, you electronically sign US IRS Form W-8BEN (*Certificate of Foreign Status of Beneficial Owner*), establishing Indian tax residency and activating the preferential $25\%$ DTAA treaty rate.
+
+### Step-by-Step Numerical Example:
+Suppose you own shares in Apple and receive a gross dividend of **$100.00**:
+- US Broker automatically withholds **$25.00 ($25\%)** and remits it to the US Internal Revenue Service (IRS).
+- Net cash deposited into your brokerage wallet: **$75.00**.
+
+---
+
+## 3. How to Avoid Paying Double Tax: Form 67 & Foreign Tax Credit (FTC)
+
+Without a treaty, the Indian tax department would also tax that $100 dividend at your 31.2% Indian income slab rate, resulting in severe double taxation (25% US + 31.2% India = 56.2% tax).
+
+Under **Section 90 of the Income Tax Act** and **Rule 128**, Indian residents can claim a **Foreign Tax Credit (FTC)** for the tax withheld in the US:
+
+```mermaid
+graph LR
+    GrossDiv[Gross Foreign Dividend: $100 = ₹8,400] --> USTax[US Withholding Tax (25%): ₹2,100]
+    GrossDiv --> IndiaTax[Indian Slab Tax (31.2%): ₹2,621]
+    USTax --> Form67[File Form 67 on IT Portal: Claim ₹2,100 FTC Credit]
+    Form67 --> NetIndiaPay[Net Tax Paid to Indian Govt: ₹2,621 - ₹2,100 = Just ₹521!]
+```
+
+### Mandatory Form 67 Filing Rules:
+1. **Timing:** Form 67 must be submitted online on the Income Tax e-filing portal **on or before the due date** for filing your ITR under Section 139(1).
+2. **Required Documents:** Attach the 1042-S statement or account dividend statement provided by the US broker confirming the gross dividend, exact US tax withheld, and currency conversion rate (SBI TT Buying Rate on the date of transaction).
+3. If Form 67 is not filed, the Indian tax assessing officer will disallow the foreign tax credit and demand full tax in India!

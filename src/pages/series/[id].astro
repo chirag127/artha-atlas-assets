@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import seriesData from '../../data/seriesRoadmap.json';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return seriesData.map(series => ({
+    params: { id: series.id },
+    props: { series }
+  }));
+}
+
+const { series } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const allArticles = await getCollection('articles');
+const publishedArticles = allArticles.filter(art => art.data.seriesId === series.id);
+---
+
+<BaseLayout
+  title={`${series.title} — Research Series Curriculum | ArthaAtlas India`}
+  description={series.description}
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <a href={`${baseUrl}/series`} class="hover:text-emerald-400">Series Roadmap</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">{series.title}</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 shadow-xl">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+          Series ID: {series.id}
+        </span>
+        <span class="text-xs font-mono text-slate-400">
+          {series.totalPlannedTopics} Planned Studies • {publishedArticles.length} Published
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        {series.title}
+      </h1>
+      <p class="text-lg text-slate-300 max-w-4xl leading-relaxed">
+        {series.description}
+      </p>
+    </div>
+
+    <!-- Currently Published Studies in this Series -->
+    <section>
+      <div class="mb-6">
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Published Research Studies</h2>
+        <p class="text-sm text-slate-400">Peer-reviewed, source-cited articles currently available in this series.</p>
+      </div>
+
+      {publishedArticles.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {publishedArticles.map(art => (
+            <a 
+              href={`${baseUrl}/articles/${art.id}`}
+              class="group bg-slate-900/60 border border-slate-800/80 hover:border-emerald-500/40 rounded-xl p-6 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-center gap-2 text-xs font-mono text-slate-500 mb-2">
+                  <span>{art.data.readTime} read</span>
+                  <span>•</span>
+                  <span>Reviewed: {art.data.lastReviewedDate}</span>
+                </div>
+                <h3 class="text-lg font-serif font-bold text-slate-100 group-hover:text-emerald-400 transition-colors mb-2">
+                  {art.data.title}
+                </h3>
+                <p class="text-xs text-slate-400 line-clamp-3 mb-4 leading-relaxed">
+                  {art.data.summary}
+                </p>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-emerald-400 font-medium">
+                Read Complete Research →
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="p-8 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
+          <p class="text-slate-400 text-sm mb-2">Articles in this series are currently undergoing fact-checking and statutory audit.</p>
+          <span class="text-xs font-mono text-emerald-400">See planned topics below.</span>
+        </div>
+      )}
+    </section>
+
+    <!-- Complete Planned Curriculum -->
+    <section>
+      <div class="border-b border-slate-800 pb-4 mb-6">
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Full Editorial Curriculum ({series.articles.length} Topics)</h2>
+        <p class="text-sm text-slate-400">Planned research topics scheduled for publication in this series.</p>
+      </div>
+
+      <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-6">
+        <ol class="space-y-4">
+          {series.articles.map((item, index) => {
+            const isPub = item.status === 'published';
+            return (
+              <li class="flex items-start gap-4 pb-4 border-b border-slate-800/60 last:border-0 last:pb-0">
+                <span class="font-mono text-xs text-slate-500 w-8 pt-0.5">
+                  #{String(index + 1).padStart(2, '0')}
+                </span>
+                <div class="flex-1">
+                  <div class="text-sm font-semibold text-slate-200">
+                    {item.title}
+                  </div>
+                  {isPub ? (
+                    <a 
+                      href={`${baseUrl}/articles/${item.slug}`} 
+                      class="text-xs font-mono text-emerald-400 hover:underline mt-1 inline-block"
+                    >
+                      ✓ Published ({item.readTime || '10 min'}): Read Research →
+                    </a>
+                  ) : (
+                    <span class="text-xs font-mono text-slate-500 mt-1 inline-block">
+                      Status: Editorial Research & Data Verification
+                    </span>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

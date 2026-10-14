@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import categoriesData from '../../data/categories.json';
+import assetsData from '../../data/assets.json';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return categoriesData.map(cat => ({
+    params: { category: cat.id },
+    props: { cat }
+  }));
+}
+
+const { cat } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Filter assets in this category
+const categoryAssets = assetsData.filter(a => a.categoryId === cat.id);
+
+// Filter published articles in this category
+const allArticles = await getCollection('articles');
+const relatedArticles = allArticles.filter(art => art.data.category === cat.id);
+---
+
+<BaseLayout 
+  title={`${cat.name} — Indian Investment Architecture | ArthaAtlas India`}
+  description={cat.shortDescription}
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <a href={`${baseUrl}/assets`} class="hover:text-emerald-400">Asset Classes</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">{cat.name}</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 mb-10 shadow-xl">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+          Category ID: {cat.id}
+        </span>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">
+            Regulators: {cat.regulators.join(', ')}
+          </span>
+          <span class="px-2.5 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700">
+            Liquidity: {cat.liquidity}
+          </span>
+        </div>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-serif font-bold text-slate-100 mb-4">{cat.name}</h1>
+      <p class="text-lg text-slate-300 leading-relaxed max-w-4xl">{cat.shortDescription}</p>
+    </div>
+
+    <!-- Category Anatomy Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+        <h3 class="text-xs font-mono uppercase tracking-wider text-emerald-400 mb-2">Expected Return Spectrum</h3>
+        <p class="text-2xl font-serif font-bold text-slate-100 mb-2">{cat.expectedReturnRange}</p>
+        <p class="text-xs text-slate-400">Long-term nominal gross return expectation. Actual post-tax realised return depends on entry valuation, cost drags, and statutory tax regime.</p>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+        <h3 class="text-xs font-mono uppercase tracking-wider text-amber-400 mb-2">Primary Risk Vector</h3>
+        <p class="text-xl font-bold text-slate-100 mb-2">{cat.keyRisks[0]}</p>
+        <p class="text-xs text-slate-400">The dominant failure mode or drawdown catalyst investors must underwrite before committing capital.</p>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+        <h3 class="text-xs font-mono uppercase tracking-wider text-indigo-400 mb-2">Typical Holding Period</h3>
+        <p class="text-xl font-bold text-slate-100 mb-2">{cat.idealHorizon}</p>
+        <p class="text-xs text-slate-400">Minimum prudent investment horizon required to ride out market cycles and mitigate premature liquidation penalties.</p>
+      </div>
+    </div>
+
+    <!-- Primary Regulatory Architecture & Failure Modes -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
+        <h2 class="text-xl font-serif font-bold text-slate-100 mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          Regulatory & Governance Architecture
+        </h2>
+        <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+          <p>
+            Instruments in this category are governed primarily under the supervisory jurisdiction of <strong class="text-slate-100">{cat.regulators.join(' and ')}</strong>. 
+            Regulatory compliance provides statutory protection regarding asset custody, disclosure requirements, and transactional recourse, but does not guarantee protection against market-wide drawdowns or business bankruptcy.
+          </p>
+          <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-700/50">
+            <span class="text-xs font-mono text-emerald-400 block mb-1">Key Investor Safe Harbor</span>
+            <span class="text-xs text-slate-300">Always verify registration via official registry databases (e.g. SEBI SCORES, RBI NBFC registry, AMFI ARN registry) before remitting funds.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/60 border border-rose-950/40 rounded-xl p-6">
+        <h2 class="text-xl font-serif font-bold text-slate-100 mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+          Structural Failure Modes & Drawdowns
+        </h2>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+          Investors must evaluate how this asset behaves during macro stress periods, liquidity freezes, and unexpected policy shifts:
+        </p>
+        <div class="p-4 rounded-lg bg-rose-950/20 border border-rose-900/40 text-sm text-rose-200">
+          <strong class="font-semibold block mb-1">Key Risk Vectors:</strong>
+          <ul class="list-disc pl-4 space-y-1 text-xs">
+            {cat.keyRisks.map(r => <li>{r}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Investable Instruments in this Category -->
+    <section class="mb-14">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-2xl font-serif font-bold text-slate-100">Investable Assets in this Class</h2>
+          <p class="text-sm text-slate-400">Specific financial instruments, structures, and investment vehicles available to Indian residents.</p>
+        </div>
+        <a href={`${baseUrl}/compare?cat=${cat.id}`} class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 transition-colors">
+          Compare All in Engine →
+        </a>
+      </div>
+
+      {categoryAssets.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categoryAssets.map(asset => (
+            <div class="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-xl p-5 flex flex-col justify-between transition-all">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono mb-2">
+                  <span class="text-emerald-400 font-semibold">{asset.structure}</span>
+                  <span class="text-slate-500">{asset.liquidity}</span>
+                </div>
+                <h3 class="text-lg font-serif font-bold text-slate-100 mb-2">{asset.name}</h3>
+                <p class="text-xs text-slate-400 mb-4 line-clamp-2">{asset.economicExposure}</p>
+                
+                <div class="space-y-1.5 text-xs font-mono border-t border-slate-800/80 pt-3 mb-4">
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Hist. Nominal:</span>
+                    <span class="text-slate-200 font-semibold">{asset.historicalNominalReturn}</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Tax Treatment:</span>
+                    <span class="text-amber-300 truncate max-w-[150px]">{asset.taxOnIncome || asset.taxOnGains}</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-500">Min. Ticket:</span>
+                    <span class="text-slate-200">{asset.minInvestment}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <a 
+                  href={`${baseUrl}/compare?asset1=${asset.id}`} 
+                  class="text-xs font-mono text-emerald-400 hover:text-emerald-300 font-medium"
+                >
+                  Analyze & Compare →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="text-sm text-slate-400 italic">No specific asset profiles registered under this category yet.</p>
+      )}
+    </section>
+
+    <!-- Published In-Depth Research Articles -->
+    <section class="mb-14">
+      <div class="mb-6">
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Deep-Dive Research Articles</h2>
+        <p class="text-sm text-slate-400">Peer-reviewed analyses, numerical breakdowns, and statutory mechanics for {cat.name}.</p>
+      </div>
+
+      {relatedArticles.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {relatedArticles.map(art => (
+            <a 
+              href={`${baseUrl}/articles/${art.id}`}
+              class="group bg-slate-900/60 border border-slate-800/80 hover:border-emerald-500/40 rounded-xl p-6 transition-all block"
+            >
+              <div class="flex items-center gap-2 text-xs font-mono text-slate-500 mb-2">
+                <span>{art.data.readTime} read</span>
+                <span>•</span>
+                <span>Updated: {art.data.lastReviewedDate}</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-slate-100 group-hover:text-emerald-400 transition-colors mb-2">
+                {art.data.title}
+              </h3>
+              <p class="text-sm text-slate-400 line-clamp-2 mb-4">
+                {art.data.summary}
+              </p>
+              <div class="flex items-center text-xs font-mono text-emerald-400 font-medium">
+                Read Complete Research →
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="p-6 rounded-xl bg-slate-900/40 border border-slate-800 text-center">
+          <p class="text-slate-400 text-sm mb-2">Articles for this category are currently in editorial drafting.</p>
+          <a href={`${baseUrl}/series`} class="text-xs font-mono text-emerald-400 hover:underline">
+            View Editorial Roadmap (300+ Planned Topics) →
+          </a>
+        </div>
+      )}
+    </section>
+  </main>
+</BaseLayout>

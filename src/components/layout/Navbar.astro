@@ -1,0 +1,138 @@
+---
+import SearchModal from '../search/SearchModal';
+
+const navLinks = [
+  { href: `${import.meta.env.BASE_URL}assets/`, label: 'Explore Assets' },
+  { href: `${import.meta.env.BASE_URL}high-return/`, label: 'High-Return' },
+  { href: `${import.meta.env.BASE_URL}allocation/`, label: 'Allocation Lab' },
+  { href: `${import.meta.env.BASE_URL}compare/`, label: 'Compare' },
+  { href: `${import.meta.env.BASE_URL}calculators/`, label: 'Calculators' },
+  { href: `${import.meta.env.BASE_URL}tax/`, label: 'Tax Centre' },
+  { href: `${import.meta.env.BASE_URL}articles/`, label: 'Research Library' },
+  { href: `${import.meta.env.BASE_URL}series/`, label: 'Series' },
+  { href: `${import.meta.env.BASE_URL}about/`, label: 'About' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 w-full backdrop-blur-md bg-[#0a0e17]/85 border-b border-[#24344d] transition-colors duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <!-- Logo & Tagline -->
+    <a href={import.meta.env.BASE_URL} class="flex items-center gap-3 group shrink-0">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-slate-950 font-black text-lg shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+        अ
+      </div>
+      <div class="flex flex-col">
+        <span class="text-base font-extrabold tracking-tight text-white group-hover:text-emerald-400 transition-colors">
+          ArthaAtlas <span class="text-emerald-400 font-semibold text-xs ml-0.5">India</span>
+        </span>
+        <span class="text-[10px] text-slate-400 tracking-wider uppercase font-medium hidden sm:inline">
+          Independent Investment Research
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden xl:flex items-center gap-1">
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href || (link.href !== import.meta.env.BASE_URL && currentPath.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            class={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              isActive
+                ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-[#162032]'
+            }`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Right Controls: Search, Theme Toggle, Mobile Toggle -->
+    <div class="flex items-center gap-2.5">
+      <!-- Search Modal React Island -->
+      <SearchModal client:idle />
+
+      <!-- Theme Switcher -->
+      <button
+        id="theme-toggle-btn"
+        class="p-2 rounded-xl bg-[#1e2c44]/60 hover:bg-[#24344d] border border-[#24344d] text-slate-300 hover:text-amber-400 transition-colors cursor-pointer"
+        aria-label="Toggle Theme"
+        title="Toggle Light / Dark Mode"
+      >
+        <svg id="theme-sun-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg id="theme-moon-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="xl:hidden p-2 rounded-xl bg-[#1e2c44]/60 hover:bg-[#24344d] border border-[#24344d] text-slate-300 hover:text-white"
+        aria-label="Toggle Mobile Menu"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden xl:hidden bg-[#111827] border-b border-[#24344d] px-4 py-4 space-y-1">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="block px-3 py-2 rounded-xl text-sm font-medium text-slate-200 hover:bg-[#1e2c44] hover:text-emerald-400 transition-colors"
+      >
+        {link.label}
+      </a>
+    ))}
+  </div>
+</header>
+
+<script>
+  // Theme Toggle Script
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  const sunIcon = document.getElementById('theme-sun-icon');
+  const moonIcon = document.getElementById('theme-moon-icon');
+
+  function updateThemeUI(theme: string) {
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+      sunIcon?.classList.add('hidden');
+      moonIcon?.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+      sunIcon?.classList.remove('hidden');
+      moonIcon?.classList.add('hidden');
+    }
+  }
+
+  const savedTheme = localStorage.getItem('artha_theme') || 'dark';
+  updateThemeUI(savedTheme);
+
+  themeBtn?.addEventListener('click', () => {
+    const isCurrentlyLight = document.documentElement.classList.contains('light');
+    const newTheme = isCurrentlyLight ? 'dark' : 'light';
+    localStorage.setItem('artha_theme', newTheme);
+    updateThemeUI(newTheme);
+  });
+
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>

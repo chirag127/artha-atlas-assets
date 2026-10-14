@@ -1,0 +1,68 @@
+---
+title: "TDS and TCS on Investments: Sections 194A, 194K, 194-IA, 194DA and 206C(1G)"
+summary: "An exhaustive guide to Tax Deducted at Source (TDS) and Tax Collected at Source (TCS) on Indian investments, covering thresholds, Form 26AS reconciliation, and refund claims."
+seriesId: "indian-investment-taxation"
+seriesTitle: "Indian Investment Taxation"
+readingOrder: 5
+publishedDate: "2026-05-10"
+lastReviewedDate: "2026-10-14"
+author: "Chirag Singhal"
+category: "cash-deposits"
+readTime: "14 min"
+tags: ["TDS", "TCS", "Form 26AS", "AIS", "Compliance"]
+keyTakeaways:
+  - "TDS is merely an interim tax deduction; final tax liability depends on the investor's comprehensive annual tax slab."
+  - "Section 194A mandates 10% TDS on bank FD interest exceeding ₹40,000 (₹50,000 for Senior Citizens)."
+  - "Section 206C(1G) imposes 20% TCS on overseas remittances under LRS exceeding ₹7 Lakhs per financial year."
+citations:
+  - "Income Tax Act, 1961 - Sections 194A, 194K, 194-IA, 194DA, 206C(1G)"
+  - "CBDT Circular on Annual Information Statement (AIS) and Form 26AS Matching"
+status: "published"
+---
+
+## 1. Demystifying TDS: Withholding vs Final Tax Liability
+
+A widespread myth among novice Indian savers is:
+
+> *"The bank already deducted 10% TDS on my Fixed Deposit interest, so my tax liability is settled."*
+
+This is dangerous and incorrect. **Tax Deducted at Source (TDS)** is simply an advance withholding mechanism enforced by the Income Tax Department to track financial transactions at origin.
+
+If an investor falls in the $30\%$ tax slab:
+- The bank deducts **$10\%$ TDS** under Section 194A.
+- The investor still owes the remaining **$21.2\%$ tax** ($20\%  delta + 4\%  cess$) directly to the government via **Advance Tax** or self-assessment tax during ITR filing.
+- Failure to pay this difference triggers mandatory penal interest under **Section 234B and Section 234C**!
+
+```mermaid
+graph LR
+    Income[Investment Cash Flow] --> TDS[Interim TDS Withheld at Source]
+    TDS --> GovtTreasury[Deposited to CBDT with PAN]
+    GovtTreasury --> AIS[Reflected in AIS & Form 26AS]
+    AIS --> ITR[Final Tax Reconciliation in Annual ITR]
+```
+
+---
+
+## 2. Investment TDS & TCS Statutory Master Reference
+
+| Statutory Section | Transaction Type | Threshold Exemption Limit | Standard TDS / TCS Rate | Higher Rate (No PAN) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Section 194A** | Bank Fixed Deposit & Recurring Deposit Interest | ₹40,000 per bank (₹50,000 for Senior Citizens) | $10\%$ | $20\%$ |
+| **Section 194A** | Corporate NCD & Non-Bank Corporate FD Interest | ₹5,000 | $10\%$ | $20\%$ |
+| **Section 194K** | Mutual Fund Dividend / IDCW Income | ₹5,000 per AMC per financial year | $10\%$ | $20\%$ |
+| **Section 194-IA** | Sale of Immovable Physical Real Estate Property | ₹50,00,000 sale consideration | $1\%$ of gross sale value | $20\%$ |
+| **Section 194DA** | Maturity payout of Life Insurance / Endowment policy | ₹1,00,000 aggregate payout | $5\%$ on the *net income* component | $20\%$ |
+| **Section 206C(1G)** | Overseas Remittance under RBI LRS (US Stocks / FX) | ₹7,00,000 per financial year | **$20\%$ TCS** on amount exceeding ₹7L | Special rules apply |
+
+---
+
+## 3. How to Submit Form 15G and Form 15H to Stop TDS
+
+If an investor's **total estimated annual income is below the taxable threshold** (e.g. ₹3 Lakhs under Old Regime or ₹7.75 Lakhs under New Regime with rebate):
+- **Form 15G:** For resident individuals below 60 years of age and HUFs.
+- **Form 15H:** For senior citizens aged 60 years and above.
+
+### Crucial Filing Guidelines:
+1. Must be submitted at the start of each financial year (April) to every bank where you maintain fixed deposits.
+2. **False Declaration Penalty:** Submitting Form 15G/15H when your total taxable income actually exceeds the exemption limit is a punishable offence under **Section 277**, carrying potential imprisonment from 3 months to 7 years along with statutory fines!
+3. Always verify that deducted TDS appears accurately in your **Annual Information Statement (AIS)** and **Form 26AS** on the Income Tax Portal.

@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostTaxComparisonCalculator from '../../components/calculators/PostTaxComparisonCalculator';
+import { getCollection } from 'astro:content';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const allArticles = await getCollection('articles');
+const taxArticles = allArticles.filter(art => art.data.category === 'taxation');
+---
+
+<BaseLayout
+  title="Indian Investment Tax Centre — Finance Act 2024 Analysis | ArthaAtlas India"
+  description="Comprehensive Indian investment taxation engine updated for Finance (No. 2) Act 2024. Statutory rules for Section 112A, 111A, 50AA, 47(viic), real estate grandfathering, TDS, and LRS TCS."
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Tax Centre</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-amber-950/30 via-slate-900 to-slate-900 border border-amber-800/40 rounded-2xl p-8 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30 mb-4">
+        Statutory Source-Backed Tax Intelligence
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        Indian Investment Tax Centre
+      </h1>
+      <p class="text-lg text-slate-300 max-w-4xl leading-relaxed">
+        Tax is the single largest controllable drag on long-term compound wealth. This research centre reflects the enacted provisions of the <strong class="text-amber-300">Finance (No. 2) Act 2024</strong> (effective July 23, 2024), providing statutory breakdowns, effective dates, and official Income Tax Department citations.
+      </p>
+    </div>
+
+    <!-- Finance Act 2024 Core Changes Summary Cards -->
+    <section>
+      <div class="mb-6">
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Key Statutory Overhauls (Finance Act 2024)</h2>
+        <p class="text-sm text-slate-400">Effective from 23 July 2024 unless otherwise specified.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-emerald-400 font-semibold">Section 112A & 111A</span>
+            <span class="text-slate-500">Equities & Equity MFs</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 mb-2">LTCG Hiked to 12.5%</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            Long-term capital gains tax increased from 10% to 12.5%. The annual tax-free exemption threshold was raised from ₹1,00,000 to ₹1,25,000. Short-term capital gains (STCG) increased from 15% to 20%.
+          </p>
+          <div class="text-xs font-mono text-slate-500 border-t border-slate-800 pt-3">
+            Holding Period: 12 Months
+          </div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-rose-400 font-semibold">Section 50AA</span>
+            <span class="text-slate-500">Debt Funds & Market-Linked</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 mb-2">Debt Funds Taxed at Slab Rate</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            Mutual funds with &le;35% domestic equity exposure acquired on or after 1 April 2023 are deemed short-term capital gains under Section 50AA and taxed at marginal income slab rates, with zero indexation.
+          </p>
+          <div class="text-xs font-mono text-slate-500 border-t border-slate-800 pt-3">
+            Holding Period: Irrelevant (Always Slab)
+          </div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-cyan-400 font-semibold">Section 112 / First Proviso</span>
+            <span class="text-slate-500">Real Estate & Unlisted</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 mb-2">Indexation Removal & Grandfathering</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            LTCG rate on immovable property reduced to 12.5% without indexation. For properties acquired before 23 July 2024, resident individuals can elect to pay 20% with indexation if it results in lower tax.
+          </p>
+          <div class="text-xs font-mono text-slate-500 border-t border-slate-800 pt-3">
+            Holding Period: 24 Months
+          </div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-amber-400 font-semibold">Section 47(viic)</span>
+            <span class="text-slate-500">Sovereign Gold Bonds</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 mb-2">SGB RBI Maturity Exemption</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            Capital gains arising on redemption of Sovereign Gold Bonds by an individual at maturity through RBI remain 100% exempt from income tax under Section 47(viic). Secondary market exchange sales are taxed under Section 112.
+          </p>
+          <div class="text-xs font-mono text-slate-500 border-t border-slate-800 pt-3">
+            Exemption: 100% Tax-Free on RBI Redemption
+          </div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-indigo-400 font-semibold">Section 206C(1G)</span>
+            <span class="text-slate-500">LRS Foreign Remittances</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 mb-2">LRS TCS Architecture (20%)</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            Outward remittances for foreign stock investments under RBI's Liberalised Remittance Scheme (LRS) incur 20% Tax Collected at Source (TCS) above the ₹7 Lakh threshold. TCS is an advance tax credit, not a final tax.
+          </p>
+          <div class="text-xs font-mono text-slate-500 border-t border-slate-800 pt-3">
+            Adjustable against advance tax or ITR refund
+          </div>
+        </div>
+
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-purple-400 font-semibold">Section 194A / 194K</span>
+            <span class="text-slate-500">TDS Withholding</span>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100 mb-2">TDS Thresholds & Form 15G/H</h3>
+          <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+            Bank FD interest incurs 10% TDS if aggregate annual interest exceeds ₹40,000 (₹50,000 for senior citizens). Mutual fund dividend distributions incur 10% TDS above ₹5,000. TDS is merely withholding; final tax follows slab rate.
+          </p>
+          <div class="text-xs font-mono text-slate-500 border-t border-slate-800 pt-3">
+            Withholding Rate: 10% (20% without PAN)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Post-Tax Return Radar -->
+    <section>
+      <div class="border-b border-slate-800 pb-4 mb-8">
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Interactive Post-Tax Return Radar</h2>
+        <p class="text-sm text-slate-400">Model how your income tax slab and holding duration erode nominal returns across 7 asset classes.</p>
+      </div>
+      <PostTaxComparisonCalculator client:load />
+    </section>
+
+    <!-- Deep-Dive Tax Articles -->
+    <section>
+      <div class="mb-6">
+        <h2 class="text-2xl font-serif font-bold text-slate-100">Statutory Tax Research & Legal Analysis</h2>
+        <p class="text-sm text-slate-400">Comprehensive guides citing the Income Tax Act 1961, judicial precedents, and CBDT circulars.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {taxArticles.map(art => (
+          <a 
+            href={`${baseUrl}/articles/${art.id}`}
+            class="group bg-slate-900/60 border border-slate-800/80 hover:border-amber-500/40 rounded-xl p-6 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center gap-2 text-xs font-mono text-slate-500 mb-2">
+                <span class="text-amber-400 font-semibold">{art.data.readTime}</span>
+                <span>•</span>
+                <span>Updated: {art.data.lastReviewedDate}</span>
+              </div>
+              <h3 class="text-lg font-serif font-bold text-slate-100 group-hover:text-amber-400 transition-colors mb-2">
+                {art.data.title}
+              </h3>
+              <p class="text-xs text-slate-400 line-clamp-3 mb-4 leading-relaxed">
+                {art.data.summary}
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono text-amber-400 font-medium">
+              Read Statutory Analysis →
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

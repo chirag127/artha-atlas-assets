@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AllocationLab from '../components/allocation/AllocationLab';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="Asset Allocation Laboratory & Portfolio Simulator | ArthaAtlas India"
+  description="Design, test, and stress-test custom multi-asset Indian investment portfolios. Evaluate nominal vs real returns, inflation resilience, rebalancing rules, and Monte Carlo probability distributions."
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Asset Allocation Lab</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 mb-10 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+        Interactive Quantitative Simulator
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        Asset Allocation Laboratory
+      </h1>
+      <p class="text-lg text-slate-300 max-w-4xl leading-relaxed">
+        Asset allocation determines over 90% of long-term portfolio return variability. Simulate multi-asset Indian portfolios across 12 pre-configured strategic models or design your custom allocation. Test inflation drags, expense ratios, rebalancing friction, and Monte Carlo terminal distributions.
+      </p>
+    </div>
+
+    <!-- Client Island for Allocation Lab -->
+    <AllocationLab client:load />
+
+    <!-- Educational Methodology Note -->
+    <div class="mt-16 bg-slate-900/60 border border-slate-800 rounded-xl p-6 font-mono text-xs text-slate-400 space-y-3">
+      <h3 class="text-slate-200 font-bold uppercase tracking-wider text-sm font-serif">Mathematical & Modeling Methodology</h3>
+      <p>
+        <strong class="text-slate-300">Geometric Return Compounding:</strong> Portfolio nominal return is calculated as the weighted sum of individual asset historical returns: R_p = sum(w_i * R_i). Real return applies the Fisher equation: r_real = (1 + R_p - TER)/(1 + inflation) - 1.
+      </p>
+      <p>
+        <strong class="text-slate-300">Monte Carlo Simulation:</strong> Terminal corpus probability distributions are generated using 1,000 log-normal random iterations incorporating portfolio-level volatility sigma_p.
+      </p>
+      <p>
+        <strong class="text-slate-300">Rebalancing Rule:</strong> We recommend periodic rebalancing (annual) or corridor rebalancing (+/- 5% relative bands) to prevent equity runaways from over-concentrating portfolio risk.
+      </p>
+    </div>
+  </main>
+</BaseLayout>

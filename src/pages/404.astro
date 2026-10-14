@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="404 — Research Vector Not Found | ArthaAtlas India"
+  description="The requested investment study, tool, or page could not be located in the ArthaAtlas encyclopedia."
+>
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center space-y-6">
+    <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center font-mono text-2xl font-bold mx-auto mb-4">
+      404
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100">
+      Research Vector Not Found
+    </h1>
+
+    <p class="text-base text-slate-400 max-w-lg mx-auto leading-relaxed">
+      The asset profile, research study, or tool you requested has either moved, was consolidated into another series, or does not exist.
+    </p>
+
+    <div class="pt-6 flex flex-wrap justify-center gap-4 font-mono text-xs">
+      <a href={`${baseUrl}/`} class="px-5 py-2.5 rounded-lg bg-emerald-500 text-slate-950 font-semibold hover:bg-emerald-400 transition-colors">
+        Return to Home →
+      </a>
+      <a href={`${baseUrl}/compare`} class="px-5 py-2.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition-colors">
+        Comparison Engine
+      </a>
+      <a href={`${baseUrl}/articles`} class="px-5 py-2.5 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition-colors">
+        Research Library
+      </a>
+    </div>
+  </main>
+</BaseLayout>

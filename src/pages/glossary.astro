@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import glossaryData from '../data/glossary.json';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Sort alphabetically by term
+const sortedTerms = [...glossaryData].sort((a, b) => a.term.localeCompare(b.term));
+
+// Group by first letter
+const groupedTerms = sortedTerms.reduce((acc, item) => {
+  const letter = item.term[0].toUpperCase();
+  if (!acc[letter]) acc[letter] = [];
+  acc[letter].push(item);
+  return acc;
+}, {} as Record<string, typeof glossaryData>);
+
+const letters = Object.keys(groupedTerms).sort();
+---
+
+<BaseLayout
+  title="Indian Financial & Statutory Glossary | ArthaAtlas India"
+  description="Comprehensive glossary of Indian investment terms, financial ratios, regulatory abbreviations, and Income Tax Act 1961 statutory sections."
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center text-xs font-mono text-slate-500 mb-6">
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-300">Financial Glossary</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/60 rounded-2xl p-8 shadow-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
+        Definitions & Legal Nomenclature
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold text-slate-100 mb-4">
+        The Indian Financial Glossary
+      </h1>
+      <p class="text-lg text-slate-300 max-w-4xl leading-relaxed">
+        Precise, unambiguous definitions of quantitative finance metrics, statutory sections of the Income Tax Act 1961, and regulatory directives from SEBI, RBI, and AMFI.
+      </p>
+
+      <!-- Alphabetical Jump Bar -->
+      <div class="flex flex-wrap gap-2 mt-6 pt-6 border-t border-slate-800 text-xs font-mono">
+        <span class="text-slate-500 py-1">Jump to:</span>
+        {letters.map(letter => (
+          <a 
+            href={`#letter-${letter}`}
+            class="w-7 h-7 flex items-center justify-center rounded bg-slate-800 hover:bg-emerald-500/20 hover:text-emerald-400 text-slate-300 transition-colors font-bold"
+          >
+            {letter}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Grouped Terms -->
+    <div class="space-y-12">
+      {letters.map(letter => (
+        <section id={`letter-${letter}`} class="scroll-mt-20">
+          <div class="border-b border-slate-800 pb-2 mb-6 flex items-center gap-3">
+            <span class="text-3xl font-serif font-bold text-emerald-400">{letter}</span>
+            <span class="text-xs font-mono text-slate-500">({groupedTerms[letter].length} terms)</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {groupedTerms[letter].map(item => (
+              <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-xs font-mono mb-2">
+                    <span class="text-emerald-400 font-semibold">{item.category}</span>
+                    {item.context && (
+                      <span class="text-amber-400 font-mono text-[11px] bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                        {item.context}
+                      </span>
+                    )}
+                  </div>
+                  <h3 class="text-xl font-serif font-bold text-slate-100 mb-2">
+                    {item.term}
+                  </h3>
+                  <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                    {item.definition}
+                  </p>
+                </div>
+
+                {item.formula && (
+                  <div class="pt-3 border-t border-slate-800/80 font-mono text-xs text-slate-400 bg-slate-950/40 p-2.5 rounded">
+                    <span class="text-[10px] uppercase text-slate-500 block">Formula / Equation</span>
+                    <span class="text-emerald-300 font-semibold">{item.formula}</span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

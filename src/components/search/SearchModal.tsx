@@ -90,14 +90,15 @@ export const SearchModal: React.FC = () => {
           setResults(topResults);
         } else {
           // Fallback mock search for local development
+          const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
           setResults([
             {
-              url: `${import.meta.env.BASE_URL}articles/anatomy-of-p2p-lending-india`,
+              url: `${basePath}/articles/anatomy-of-p2p-lending-india`,
               title: 'The Anatomy of P2P Lending in India: Why Contractual Yield != Realised Return',
               excerpt: 'An independent empirical investigation into peer-to-peer alternative lending in India...',
             },
             {
-              url: `${import.meta.env.BASE_URL}articles/sovereign-gold-bonds-definitive-guide`,
+              url: `${basePath}/articles/sovereign-gold-bonds-definitive-guide`,
               title: 'The Definitive Guide to Sovereign Gold Bonds (SGB)',
               excerpt: 'Complete Section 47(viic) capital gains tax exemption and 2.50% annual coupon...',
             },

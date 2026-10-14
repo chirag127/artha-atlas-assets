@@ -1,16 +1,18 @@
 ---
 import SearchModal from '../search/SearchModal';
 
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const navLinks = [
-  { href: `${import.meta.env.BASE_URL}assets/`, label: 'Explore Assets' },
-  { href: `${import.meta.env.BASE_URL}high-return/`, label: 'High-Return' },
-  { href: `${import.meta.env.BASE_URL}allocation/`, label: 'Allocation Lab' },
-  { href: `${import.meta.env.BASE_URL}compare/`, label: 'Compare' },
-  { href: `${import.meta.env.BASE_URL}calculators/`, label: 'Calculators' },
-  { href: `${import.meta.env.BASE_URL}tax/`, label: 'Tax Centre' },
-  { href: `${import.meta.env.BASE_URL}articles/`, label: 'Research Library' },
-  { href: `${import.meta.env.BASE_URL}series/`, label: 'Series' },
-  { href: `${import.meta.env.BASE_URL}about/`, label: 'About' },
+  { href: `${baseUrl}/assets`, label: 'Explore Assets' },
+  { href: `${baseUrl}/high-return`, label: 'High-Return' },
+  { href: `${baseUrl}/allocation`, label: 'Allocation Lab' },
+  { href: `${baseUrl}/compare`, label: 'Compare' },
+  { href: `${baseUrl}/calculators`, label: 'Calculators' },
+  { href: `${baseUrl}/tax`, label: 'Tax Centre' },
+  { href: `${baseUrl}/articles`, label: 'Research Library' },
+  { href: `${baseUrl}/series`, label: 'Series' },
+  { href: `${baseUrl}/about`, label: 'About' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -19,7 +21,7 @@ const currentPath = Astro.url.pathname;
 <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-[#0a0e17]/85 border-b border-[#24344d] transition-colors duration-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
     <!-- Logo & Tagline -->
-    <a href={import.meta.env.BASE_URL} class="flex items-center gap-3 group shrink-0">
+    <a href={`${baseUrl}/`} class="flex items-center gap-3 group shrink-0">
       <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-slate-950 font-black text-lg shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
         अ
       </div>
@@ -34,13 +36,13 @@ const currentPath = Astro.url.pathname;
     </a>
 
     <!-- Desktop Navigation Links -->
-    <nav class="hidden xl:flex items-center gap-1">
+    <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1">
       {navLinks.map((link) => {
-        const isActive = currentPath === link.href || (link.href !== import.meta.env.BASE_URL && currentPath.startsWith(link.href));
+        const isActive = currentPath === link.href || currentPath === `${link.href}/` || (link.href !== baseUrl && currentPath.startsWith(`${link.href}/`));
         return (
           <a
             href={link.href}
-            class={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+            class={`px-2 xl:px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
               isActive
                 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-sm'
                 : 'text-slate-300 hover:text-white hover:bg-[#162032]'
@@ -75,7 +77,7 @@ const currentPath = Astro.url.pathname;
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-btn"
-        class="xl:hidden p-2 rounded-xl bg-[#1e2c44]/60 hover:bg-[#24344d] border border-[#24344d] text-slate-300 hover:text-white"
+        class="lg:hidden p-2 rounded-xl bg-[#1e2c44]/60 hover:bg-[#24344d] border border-[#24344d] text-slate-300 hover:text-white"
         aria-label="Toggle Mobile Menu"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +88,7 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden xl:hidden bg-[#111827] border-b border-[#24344d] px-4 py-4 space-y-1">
+  <div id="mobile-menu" class="hidden lg:hidden bg-[#111827] border-b border-[#24344d] px-4 py-4 space-y-1">
     {navLinks.map((link) => (
       <a
         href={link.href}

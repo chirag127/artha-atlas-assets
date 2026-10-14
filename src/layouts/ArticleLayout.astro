@@ -37,18 +37,18 @@ const {
   nextArticle,
 } = Astro.props;
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title={`${title} | ArthaAtlas India`} description={summary}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-xs text-slate-400 mb-8 overflow-x-auto whitespace-nowrap">
-      <a href={baseUrl} class="hover:text-emerald-400 transition-colors">Home</a>
+      <a href={`${baseUrl}/`} class="hover:text-emerald-400 transition-colors">Home</a>
       <span>/</span>
-      <a href={`${baseUrl}articles/`} class="hover:text-emerald-400 transition-colors">Library</a>
+      <a href={`${baseUrl}/articles`} class="hover:text-emerald-400 transition-colors">Library</a>
       <span>/</span>
-      <a href={`${baseUrl}series/${seriesId}`} class="hover:text-emerald-400 transition-colors">{seriesTitle}</a>
+      <a href={`${baseUrl}/series/${seriesId}`} class="hover:text-emerald-400 transition-colors">{seriesTitle}</a>
       <span>/</span>
       <span class="text-slate-300 font-medium truncate max-w-xs">{title}</span>
     </nav>
@@ -57,13 +57,13 @@ const baseUrl = import.meta.env.BASE_URL;
     <header class="mb-10 space-y-4 pb-8 border-b border-[#24344d]">
       <div class="flex flex-wrap items-center gap-2">
         <a
-          href={`${baseUrl}series/${seriesId}`}
+          href={`${baseUrl}/series/${seriesId}`}
           class="px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold"
         >
           {seriesTitle} • Chapter {readingOrder}
         </a>
         <a
-          href={`${baseUrl}assets/${category}`}
+          href={`${baseUrl}/assets/${category}`}
           class="px-2.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-mono uppercase"
         >
           {category}
@@ -147,7 +147,7 @@ const baseUrl = import.meta.env.BASE_URL;
           ))}
         </ul>
         <p class="text-[11px] text-slate-500 italic mt-2">
-          All statutory claims are mapped to enacted legislation and regulator directives in our central <a href={`${baseUrl}sources/`} class="text-emerald-400 hover:underline">Primary Source Register</a>.
+          All statutory claims are mapped to enacted legislation and regulator directives in our central <a href={`${baseUrl}/sources`} class="text-emerald-400 hover:underline">Primary Source Register</a>.
         </p>
       </section>
     )}
@@ -159,7 +159,7 @@ const baseUrl = import.meta.env.BASE_URL;
         <span>Help us maintain institutional accuracy by reporting discrepancies to our editorial board.</span>
       </div>
       <a
-        href={`${baseUrl}corrections/`}
+        href={`${baseUrl}/corrections`}
         class="px-3.5 py-1.5 rounded-xl bg-[#1e2c44] hover:bg-[#24344d] border border-[#24344d] text-emerald-400 font-semibold transition-colors shrink-0 text-center"
       >
         Report a Correction
@@ -170,7 +170,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="mt-12 pt-8 border-t border-[#24344d] grid grid-cols-1 sm:grid-cols-2 gap-4">
       {prevArticle ? (
         <a
-          href={`${baseUrl}articles/${prevArticle.slug}`}
+          href={`${baseUrl}/articles/${prevArticle.slug}`}
           class="p-4 rounded-2xl bg-[#162032] hover:bg-[#1e2c44] border border-[#24344d] transition-all group"
         >
           <span class="text-[11px] text-slate-500 block mb-1">← Previous Chapter</span>
@@ -182,7 +182,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
       {nextArticle && (
         <a
-          href={`${baseUrl}articles/${nextArticle.slug}`}
+          href={`${baseUrl}/articles/${nextArticle.slug}`}
           class="p-4 rounded-2xl bg-[#162032] hover:bg-[#1e2c44] border border-[#24344d] transition-all text-right group"
         >
           <span class="text-[11px] text-slate-500 block mb-1">Next Chapter →</span>

@@ -1,6 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <footer class="w-full bg-[#070b12] border-t border-[#24344d] text-slate-400 mt-20 pt-16 pb-12 transition-colors">
@@ -8,7 +8,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#24344d]/60">
       <!-- Col 1: Identity & Mission -->
       <div class="lg:col-span-2 space-y-4">
-        <a href={baseUrl} class="flex items-center gap-3">
+        <a href={`${baseUrl}/`} class="flex items-center gap-3">
           <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-slate-950 font-black text-base">
             अ
           </div>
@@ -49,14 +49,14 @@ const baseUrl = import.meta.env.BASE_URL;
       <div class="space-y-3">
         <h4 class="text-xs font-bold uppercase tracking-wider text-white">Asset Exploration</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href={`${baseUrl}assets/cash-deposits`} class="hover:text-emerald-400 transition-colors">Cash & Bank FDs</a></li>
-          <li><a href={`${baseUrl}assets/indian-equities`} class="hover:text-emerald-400 transition-colors">Indian Listed Equities</a></li>
-          <li><a href={`${baseUrl}assets/mutual-funds-etfs`} class="hover:text-emerald-400 transition-colors">Mutual Funds & ETFs</a></li>
-          <li><a href={`${baseUrl}assets/bonds-fixed-income`} class="hover:text-emerald-400 transition-colors">G-Secs & Corporate Bonds</a></li>
-          <li><a href={`${baseUrl}assets/p2p-lending`} class="hover:text-emerald-400 transition-colors">P2P Lending Reality</a></li>
-          <li><a href={`${baseUrl}assets/gold-silver-commodities`} class="hover:text-emerald-400 transition-colors">SGBs & Gold ETFs</a></li>
-          <li><a href={`${baseUrl}assets/real-estate-reits`} class="hover:text-emerald-400 transition-colors">REITs & Real Estate</a></li>
-          <li><a href={`${baseUrl}assets/productive-businesses`} class="hover:text-emerald-400 transition-colors">Operating Businesses (ROIC)</a></li>
+          <li><a href={`${baseUrl}/assets/cash-deposits`} class="hover:text-emerald-400 transition-colors">Cash & Bank FDs</a></li>
+          <li><a href={`${baseUrl}/assets/indian-equities`} class="hover:text-emerald-400 transition-colors">Indian Listed Equities</a></li>
+          <li><a href={`${baseUrl}/assets/mutual-funds-etfs`} class="hover:text-emerald-400 transition-colors">Mutual Funds & ETFs</a></li>
+          <li><a href={`${baseUrl}/assets/bonds-fixed-income`} class="hover:text-emerald-400 transition-colors">G-Secs & Corporate Bonds</a></li>
+          <li><a href={`${baseUrl}/assets/p2p-lending`} class="hover:text-emerald-400 transition-colors">P2P Lending Reality</a></li>
+          <li><a href={`${baseUrl}/assets/gold-silver-commodities`} class="hover:text-emerald-400 transition-colors">SGBs & Gold ETFs</a></li>
+          <li><a href={`${baseUrl}/assets/real-estate-reits`} class="hover:text-emerald-400 transition-colors">REITs & Real Estate</a></li>
+          <li><a href={`${baseUrl}/assets/productive-businesses`} class="hover:text-emerald-400 transition-colors">Operating Businesses (ROIC)</a></li>
         </ul>
       </div>
 
@@ -64,14 +64,14 @@ const baseUrl = import.meta.env.BASE_URL;
       <div class="space-y-3">
         <h4 class="text-xs font-bold uppercase tracking-wider text-white">Calculators & Tools</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href={`${baseUrl}calculators/`} class="hover:text-emerald-400 transition-colors">SIP & Step-Up Compounding</a></li>
-          <li><a href={`${baseUrl}calculators/`} class="hover:text-emerald-400 transition-colors">SWP Retirement Sustainability</a></li>
-          <li><a href={`${baseUrl}calculators/`} class="hover:text-emerald-400 transition-colors">P2P Realised Return Simulator</a></li>
-          <li><a href={`${baseUrl}calculators/`} class="hover:text-emerald-400 transition-colors">Real Estate Yield & Leveraged IRR</a></li>
-          <li><a href={`${baseUrl}calculators/`} class="hover:text-emerald-400 transition-colors">Post-Tax Comparison Radar</a></li>
-          <li><a href={`${baseUrl}allocation/`} class="hover:text-emerald-400 transition-colors">12 Model Portfolios Lab</a></li>
-          <li><a href={`${baseUrl}compare/`} class="hover:text-emerald-400 transition-colors">Multi-Asset Comparison Engine</a></li>
-          <li><a href={`${baseUrl}tax/`} class="hover:text-emerald-400 transition-colors">Statutory Tax Centre</a></li>
+          <li><a href={`${baseUrl}/calculators#sip`} class="hover:text-emerald-400 transition-colors">SIP & Step-Up Compounding</a></li>
+          <li><a href={`${baseUrl}/calculators#swp`} class="hover:text-emerald-400 transition-colors">SWP Retirement Sustainability</a></li>
+          <li><a href={`${baseUrl}/calculators#p2p`} class="hover:text-emerald-400 transition-colors">P2P Realised Return Simulator</a></li>
+          <li><a href={`${baseUrl}/calculators#rental`} class="hover:text-emerald-400 transition-colors">Real Estate Yield & Leveraged IRR</a></li>
+          <li><a href={`${baseUrl}/calculators#tax`} class="hover:text-emerald-400 transition-colors">Post-Tax Comparison Radar</a></li>
+          <li><a href={`${baseUrl}/allocation`} class="hover:text-emerald-400 transition-colors">12 Model Portfolios Lab</a></li>
+          <li><a href={`${baseUrl}/compare`} class="hover:text-emerald-400 transition-colors">Multi-Asset Comparison Engine</a></li>
+          <li><a href={`${baseUrl}/tax`} class="hover:text-emerald-400 transition-colors">Statutory Tax Centre</a></li>
         </ul>
       </div>
 
@@ -79,12 +79,12 @@ const baseUrl = import.meta.env.BASE_URL;
       <div class="space-y-3">
         <h4 class="text-xs font-bold uppercase tracking-wider text-white">Transparency & Standards</h4>
         <ul class="space-y-2 text-xs">
-          <li><a href={`${baseUrl}sources/`} class="hover:text-emerald-400 transition-colors">Primary Source Register</a></li>
-          <li><a href={`${baseUrl}methodology/`} class="hover:text-emerald-400 transition-colors">Mathematical Methodology</a></li>
-          <li><a href={`${baseUrl}glossary/`} class="hover:text-emerald-400 transition-colors">Financial Glossary</a></li>
-          <li><a href={`${baseUrl}series/`} class="hover:text-emerald-400 transition-colors">30-Series Editorial Roadmap</a></li>
-          <li><a href={`${baseUrl}corrections/`} class="hover:text-emerald-400 transition-colors">Report an Error / Correction Policy</a></li>
-          <li><a href={`${baseUrl}about/`} class="hover:text-emerald-400 transition-colors">Editorial Philosophy</a></li>
+          <li><a href={`${baseUrl}/sources`} class="hover:text-emerald-400 transition-colors">Primary Source Register</a></li>
+          <li><a href={`${baseUrl}/methodology`} class="hover:text-emerald-400 transition-colors">Mathematical Methodology</a></li>
+          <li><a href={`${baseUrl}/glossary`} class="hover:text-emerald-400 transition-colors">Financial Glossary</a></li>
+          <li><a href={`${baseUrl}/series`} class="hover:text-emerald-400 transition-colors">30-Series Editorial Roadmap</a></li>
+          <li><a href={`${baseUrl}/corrections`} class="hover:text-emerald-400 transition-colors">Report an Error / Correction Policy</a></li>
+          <li><a href={`${baseUrl}/about`} class="hover:text-emerald-400 transition-colors">Editorial Philosophy</a></li>
         </ul>
       </div>
     </div>

@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import categoriesData from '../../data/categories.json';
 
-const baseUrl = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout
@@ -27,7 +27,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {categoriesData.map((cat, idx) => (
         <a
-          href={`${baseUrl}assets/${cat.slug}`}
+          href={`${baseUrl}/assets/${cat.slug}`}
           class="p-6 rounded-3xl bg-[#162032] hover:bg-[#1a273e] border border-[#24344d] hover:border-emerald-500/40 transition-all flex flex-col justify-between group shadow-xl hover:-translate-y-1"
         >
           <div class="space-y-4">

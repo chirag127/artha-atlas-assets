@@ -28,16 +28,17 @@ In traditional market-capitalization-weighted indices (like the Nifty 50 or Nift
 
 ```mermaid
 graph TD
-    Market[Nifty Broad Market Universe] --> Screen[Quantitative Mathematical Screening]
-    Screen --> Mom[Momentum Factor: 6M & 12M Price Persistence]
-    Screen --> LowVol[Low Volatility Factor: Minimum Daily Variance]
-    Screen --> Qual[Quality Factor: High ROCE, Low Debt, Clean Accruals]
-    Screen --> Val[Value Factor: Low PE, High Earnings & Book Yield]
+    Market["Nifty Broad Market Universe"] --> Screen["Quantitative Mathematical Screening"]
+    Screen --> Mom["Momentum Factor: 6M & 12M Price Persistence"]
+    Screen --> LowVol["Low Volatility Factor: Minimum Daily Variance"]
+    Screen --> Qual["Quality Factor: High ROCE, Low Debt, Clean Accruals"]
+    Screen --> Val["Value Factor: Low PE, High Earnings & Book Yield"]
     
-    Mom --> PortMom[Nifty 200 Momentum 30]
-    LowVol --> PortLowVol[Nifty 100 Low Volatility 30]
-    Qual --> PortQual[Nifty 200 Quality 30]
-    Val --> PortVal[Nifty 500 Value 50]
+    Mom --> PortMom["Nifty 200 Momentum 30"]
+    LowVol --> PortLowVol["Nifty 100 Low Volatility 30"]
+    Qual --> PortQual["Nifty 200 Quality 30"]
+    Val --> PortVal["Nifty 500 Value 50"]
+
 ```
 
 ---

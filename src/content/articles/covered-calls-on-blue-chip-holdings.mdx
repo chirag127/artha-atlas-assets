@@ -28,14 +28,15 @@ A **Covered Call** strategy monetizes this dormant volatility by selling someone
 
 ```mermaid
 graph TD
-    Hold[Investor Holds 1 Lot of Delivery Shares: e.g. 500 shares of Reliance] --> SellCall[Sell 1 OTM Call Option: e.g. 5% Above Current Spot Price]
-    SellCall --> Premium[Immediate Cash Premium Credited to Broker Account]
+    Hold["Investor Holds 1 Lot of Delivery Shares: e.g. 500 shares of Reliance"] --> SellCall["Sell 1 OTM Call Option: e.g. 5% Above Current Spot Price"]
+    SellCall --> Premium["Immediate Cash Premium Credited to Broker Account"]
     
-    Premium --> Scenario1[Scenario A: Stock Stays Flat or Dips]
-    Premium --> Scenario2[Scenario B: Stock Rallies Explosively Past Strike]
+    Premium --> Scenario1["Scenario A: Stock Stays Flat or Dips"]
+    Premium --> Scenario2["Scenario B: Stock Rallies Explosively Past Strike"]
     
-    Scenario1 --> Keep1[Option Expires Worthless: Investor Keeps Both Shares & Cash Premium!]
-    Scenario2 --> Keep2[Shares Delivered at Strike: Investor Locks in Capital Gain + Premium, Caps Further Upside]
+    Scenario1 --> Keep1["Option Expires Worthless: Investor Keeps Both Shares & Cash Premium!"]
+    Scenario2 --> Keep2["Shares Delivered at Strike: Investor Locks in Capital Gain + Premium, Caps Further Upside"]
+
 ```
 
 ---

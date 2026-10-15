@@ -30,10 +30,11 @@ To establish tax parity between bank deposits and debt market investments, the P
 
 ```mermaid
 graph TD
-    Fund[Mutual Fund Scheme] --> CheckEquity{Domestic Equity Allocation}
-    CheckEquity -- "> 65% Equity" --> EquityTax[Equity Taxation: 20% STCG / 12.5% LTCG]
-    CheckEquity -- "35% to 65% Equity" --> HybridTax[Hybrid Rules: Slab STCG / 12.5% LTCG post 24m]
-    CheckEquity -- "<= 35% Equity" --> Sec50AA[Section 50AA Trap: DEEMED STCG at Slab Rates]
+    Fund["Mutual Fund Scheme"] --> CheckEquity{Domestic Equity Allocation}
+    CheckEquity -- "> 65% Equity" --> EquityTax["Equity Taxation: 20% STCG / 12.5% LTCG"]
+    CheckEquity -- "35% to 65% Equity" --> HybridTax["Hybrid Rules: Slab STCG / 12.5% LTCG post 24m"]
+    CheckEquity -- "<= 35% Equity" --> Sec50AA["Section 50AA Trap: DEEMED STCG at Slab Rates"]
+
 ```
 
 ---

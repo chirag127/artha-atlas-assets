@@ -28,12 +28,13 @@ Under **Section 206C(1G)** of the Income Tax Act, 1961, when an Indian resident 
 
 ```mermaid
 graph TD
-    Remit[Remittance of ₹12,00,000 via LRS] --> Split1[First ₹7,00,000: 0% TCS = ₹0]
-    Remit --> Split2[Excess ₹5,00,000: 20% TCS = ₹1,00,000]
+    Remit["Remittance of ₹12,00,000 via LRS"] --> Split1["First ₹7,00,000: 0% TCS = ₹0"]
+    Remit --> Split2["Excess ₹5,00,000: 20% TCS = ₹1,00,000"]
     
-    Split2 --> BankDeduct[Bank Deducts ₹1,00,000 TCS and deposits with CBDT]
-    BankDeduct --> 26AS[TCS Reflects in Form 26AS / AIS]
-    26AS --> Adjustment[Investor Adjusts against Advance Tax or Claims Full Refund in ITR]
+    Split2 --> BankDeduct["Bank Deducts ₹1,00,000 TCS and deposits with CBDT"]
+    BankDeduct --> 26AS["TCS Reflects in Form 26AS / AIS"]
+    26AS --> Adjustment["Investor Adjusts against Advance Tax or Claims Full Refund in ITR"]
+
 ```
 
 ### The Crucial Takeaway:
@@ -63,10 +64,11 @@ Under **Section 90 of the Income Tax Act** and **Rule 128**, Indian residents ca
 
 ```mermaid
 graph LR
-    GrossDiv[Gross Foreign Dividend: $100 = ₹8,400] --> USTax[US Withholding Tax (25%): ₹2,100]
-    GrossDiv --> IndiaTax[Indian Slab Tax (31.2%): ₹2,621]
-    USTax --> Form67[File Form 67 on IT Portal: Claim ₹2,100 FTC Credit]
-    Form67 --> NetIndiaPay[Net Tax Paid to Indian Govt: ₹2,621 - ₹2,100 = Just ₹521!]
+    GrossDiv["Gross Foreign Dividend: $100 = ₹8,400"] --> USTax["US Withholding Tax (25%): ₹2,100"]
+    GrossDiv --> IndiaTax["Indian Slab Tax (31.2%): ₹2,621"]
+    USTax --> Form67["File Form 67 on IT Portal: Claim ₹2,100 FTC Credit"]
+    Form67 --> NetIndiaPay["Net Tax Paid to Indian Govt: ₹2,621 - ₹2,100 = Just ₹521!"]
+
 ```
 
 ### Mandatory Form 67 Filing Rules:

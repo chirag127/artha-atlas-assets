@@ -40,8 +40,9 @@ Because $y$ sits in the denominator of every single term, **bond prices and mark
 
 ```mermaid
 graph LR
-    YieldHike[RBI Hikes Interest Rates: Yields Rise] --> BondDrop[Existing Bond Prices Fall in Secondary Market]
-    YieldCut[RBI Cuts Interest Rates: Yields Fall] --> BondRise[Existing Bond Prices Surge in Secondary Market]
+    YieldHike["RBI Hikes Interest Rates: Yields Rise"] --> BondDrop["Existing Bond Prices Fall in Secondary Market"]
+    YieldCut["RBI Cuts Interest Rates: Yields Fall"] --> BondRise["Existing Bond Prices Surge in Secondary Market"]
+
 ```
 
 ---
@@ -81,9 +82,10 @@ Because the price-yield curve of a plain-vanilla bond is convex (curved like a b
 
 ```mermaid
 graph TD
-    Duration[Linear Duration Line: Straight Approximation]
-    Curve[Actual Bond Price Curve: Upward Convex]
-    Diff[Convexity Buffer: Extra Gain on Rate Cuts, Reduced Loss on Rate Hikes]
+    Duration["Linear Duration Line: Straight Approximation"]
+    Curve["Actual Bond Price Curve: Upward Convex"]
+    Diff["Convexity Buffer: Extra Gain on Rate Cuts, Reduced Loss on Rate Hikes"]
+
 ```
 
 Incorporating the **Convexity ($C_x$)** term using Taylor series expansion:

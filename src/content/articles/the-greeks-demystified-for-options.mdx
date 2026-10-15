@@ -33,12 +33,13 @@ The **Greeks** are simply the **first and second-order partial derivatives** of 
 
 ```mermaid
 graph TD
-    PriceFunction[Option Price: V] --> Delta[Delta: dV / dS (Spot Price Sensitivity)]
-    PriceFunction --> Theta[Theta: dV / dt (Time Decay Sensitivity)]
-    PriceFunction --> Vega[Vega: dV / d_sigma (Implied Volatility Sensitivity)]
-    PriceFunction --> Rho[Rho: dV / dr (Interest Rate Sensitivity)]
+    PriceFunction["Option Price: V"] --> Delta["Delta: dV / dS (Spot Price Sensitivity)"]
+    PriceFunction --> Theta["Theta: dV / dt (Time Decay Sensitivity)"]
+    PriceFunction --> Vega["Vega: dV / d_sigma (Implied Volatility Sensitivity)"]
+    PriceFunction --> Rho["Rho: dV / dr (Interest Rate Sensitivity)"]
     
-    Delta --> Gamma[Gamma: d2V / dS2 (Rate of Change of Delta)]
+    Delta --> Gamma["Gamma: d2V / dS2 (Rate of Change of Delta)"]
+
 ```
 
 ---

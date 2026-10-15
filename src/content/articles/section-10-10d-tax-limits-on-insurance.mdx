@@ -30,13 +30,14 @@ The government systematically shut down these loopholes in two successive Financ
 
 ```mermaid
 graph TD
-    Policy[Life Insurance Policy Maturity Proceeds] --> TypeCheck{Is it Death Claim or Survival Maturity?}
-    TypeCheck -- "Death Benefit to Nominee" --> ExemptAlways[100% TAX FREE under Sec 10 10D in ALL Cases]
+    Policy["Life Insurance Policy Maturity Proceeds"] --> TypeCheck{Is it Death Claim or Survival Maturity?}
+    TypeCheck -- "Death Benefit to Nominee" --> ExemptAlways["100% TAX FREE under Sec 10 10D in ALL Cases"]
     TypeCheck -- "Survival Maturity by Policyholder" --> CheckDate{Policy Issue Date}
     
     CheckDate -- "Issued Post 1-Apr-2023" --> PremiumCheck{Aggregate Annual Premium > ₹5 Lakhs?}
-    PremiumCheck -- "Yes (> ₹5L)" --> TaxableSlab[Maturity Taxed as Income under Sec 56 2 xiii at Slab Rate!]
-    PremiumCheck -- "No (<= ₹5L)" --> ExemptMaturity[100% Tax Free under Sec 10 10D]
+    PremiumCheck -- "Yes (> ₹5L)" --> TaxableSlab["Maturity Taxed as Income under Sec 56 2 xiii at Slab Rate!"]
+    PremiumCheck -- "No (<= ₹5L)" --> ExemptMaturity["100% Tax Free under Sec 10 10D"]
+
 ```
 
 ---

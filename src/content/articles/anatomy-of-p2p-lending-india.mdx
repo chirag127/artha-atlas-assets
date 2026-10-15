@@ -45,12 +45,13 @@ Where:
 
 ```mermaid
 graph TD
-    Gross[Gross Contractual APR: 12.5%] --> Drag[Minus Idle Cash Drag: -1.0%]
-    Drag --> Def[Minus Net Principal Default Write-offs: -3.3%]
-    Def --> Fee[Minus Platform Servicing Fees: -1.5%]
-    Fee --> PreTax[Net Realised Pre-Tax Yield: 6.7%]
-    PreTax --> TaxTrap[Subtract Slab Income Tax on Gross: -3.6%]
-    TaxTrap --> Net[Actual Net Realised Post-Tax Cash: 3.1%]
+    Gross["Gross Contractual APR: 12.5%"] --> Drag["Minus Idle Cash Drag: -1.0%"]
+    Drag --> Def["Minus Net Principal Default Write-offs: -3.3%"]
+    Def --> Fee["Minus Platform Servicing Fees: -1.5%"]
+    Fee --> PreTax["Net Realised Pre-Tax Yield: 6.7%"]
+    PreTax --> TaxTrap["Subtract Slab Income Tax on Gross: -3.6%"]
+    TaxTrap --> Net["Actual Net Realised Post-Tax Cash: 3.1%"]
+
 ```
 
 ---
@@ -116,16 +117,17 @@ On 16 August 2024, the Reserve Bank of India issued sweeping amendments to the N
 ```mermaid
 graph LR
     subgraph Prohibited_Practices_Aug_2024
-        A[Ban on Instant Liquidity / T+0 Any-Time Withdrawals]
-        B[Prohibition of First Loss Default Guarantees FLDG]
-        C[Ban on Promoting P2P as Assured Return Products]
-        D[Ban on Re-pooling and Automatic Cash Recycling]
+        A["Ban on Instant Liquidity / T+0 Any-Time Withdrawals"]
+        B["Prohibition of First Loss Default Guarantees FLDG"]
+        C["Ban on Promoting P2P as Assured Return Products"]
+        D["Ban on Re-pooling and Automatic Cash Recycling"]
     end
     subgraph Mandatory_Safeguards
-        E[Strict T+1 Escrow Account Settlement]
-        F[Max Exposure Cap: ₹50 Lakh across all platforms]
-        G[Mandatory CA Net Worth Certificate > ₹10 Lakh]
+        E["Strict T+1 Escrow Account Settlement"]
+        F["Max Exposure Cap: ₹50 Lakh across all platforms"]
+        G["Mandatory CA Net Worth Certificate > ₹10 Lakh"]
     end
+
 ```
 
 ### Key Regulatory Enforcements:

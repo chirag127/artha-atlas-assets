@@ -29,11 +29,12 @@ To understand why ULIPs underperform, one must look at how an insurer processes 
 
 ```mermaid
 graph TD
-    Premium[Annual Premium: ₹1,00,000] --> Deduct1[Subtract Premium Allocation Charge: 2% to 6%]
-    Deduct1 --> Deduct2[Subtract Policy Administration Charge: ₹500 - ₹1,200/yr]
-    Deduct2 --> Deduct3[Subtract Monthly Mortality Charge: Scaled to Age]
-    Deduct3 --> Deduct4[Subtract Fund Management Charge: Up to 1.35% p.a.]
-    Deduct4 --> ActualInvested[Remaining Capital Buys Units in ULIP Fund]
+    Premium["Annual Premium: ₹1,00,000"] --> Deduct1["Subtract Premium Allocation Charge: 2% to 6%"]
+    Deduct1 --> Deduct2["Subtract Policy Administration Charge: ₹500 - ₹1,200/yr"]
+    Deduct2 --> Deduct3["Subtract Monthly Mortality Charge: Scaled to Age"]
+    Deduct3 --> Deduct4["Subtract Fund Management Charge: Up to 1.35% p.a."]
+    Deduct4 --> ActualInvested["Remaining Capital Buys Units in ULIP Fund"]
+
 ```
 
 ---

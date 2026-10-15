@@ -21,6 +21,7 @@
     "@astrojs/markdown-remark": "^7.3.2",
     "@astrojs/mdx": "^8.0.3",
     "@astrojs/react": "^7.0.1",
+    "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.0.9",
     "@tanstack/react-table": "^8.21.2",
     "astro": "^7.3.8",

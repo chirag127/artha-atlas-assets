@@ -26,11 +26,12 @@ In credit risk quantitative modeling, retail loans do not transition from perfor
 
 ```mermaid
 graph LR
-    Current[Performing: 0 DPD] --> SMA0[SMA-0: 1 to 30 DPD]
-    SMA0 --> SMA1[SMA-1: 31 to 60 DPD]
-    SMA1 --> SMA2[SMA-2: 61 to 90 DPD]
-    SMA2 --> NPA[NPA / Default: 90+ DPD]
-    NPA --> WriteOff[Loss Asset / Write-off: 180+ DPD]
+    Current["Performing: 0 DPD"] --> SMA0["SMA-0: 1 to 30 DPD"]
+    SMA0 --> SMA1["SMA-1: 31 to 60 DPD"]
+    SMA1 --> SMA2["SMA-2: 61 to 90 DPD"]
+    SMA2 --> NPA["NPA / Default: 90+ DPD"]
+    NPA --> WriteOff["Loss Asset / Write-off: 180+ DPD"]
+
 ```
 
 ### Empirical Recovery Probabilities by Bucket:
@@ -68,6 +69,7 @@ pie title Base Case Yield Breakdown on ₹10 Lakh P2P Portfolio
     "Income Tax on Gross Interest" : 37
     "Principal Lost to Defaults" : 41
     "Platform Servicing Fees" : 15
+
 ```
 
 ---

@@ -30,11 +30,12 @@ Unlike Gold Exchange Traded Funds (ETFs) or physical bars, SGBs are not backed b
 
 ```mermaid
 graph TD
-    Investor[Investor Capital] --> RBI[Reserve Bank of India on behalf of GoI]
-    RBI --> Bond[SGB Certificate in Demat / Ledger Form]
-    Bond --> SemiAnnual[2.50% Annual Coupon Paid Semi-Annually into Bank]
-    Bond --> Redemption[Maturity / 5th-Year Exit: Simple Average of Last 3 Days IBJA 999 Gold Price]
-    Redemption --> TaxFree[100% Capital Gains Exemption under Section 47 viic]
+    Investor["Investor Capital"] --> RBI["Reserve Bank of India on behalf of GoI"]
+    RBI --> Bond["SGB Certificate in Demat / Ledger Form"]
+    Bond --> SemiAnnual["2.50% Annual Coupon Paid Semi-Annually into Bank"]
+    Bond --> Redemption["Maturity / 5th-Year Exit: Simple Average of Last 3 Days IBJA 999 Gold Price"]
+    Redemption --> TaxFree["100% Capital Gains Exemption under Section 47 viic"]
+
 ```
 
 ### Statutory Terms of Issue
@@ -74,12 +75,13 @@ Because retail liquidity on the NSE and BSE is thin, many retail bondholders who
 
 ```mermaid
 graph LR
-    Spot[Spot Physical Gold: ₹7,600 / gram]
-    SGB_NSE[SGB Tranche on NSE: ₹7,250 / gram]
+    Spot["Spot Physical Gold: ₹7,600 / gram"]
+    SGB_NSE["SGB Tranche on NSE: ₹7,250 / gram"]
     
     Spot -.->|4.6% Discount Arbitrage| SGB_NSE
-    SGB_NSE --> Yield[Yield to Maturity Boost: +2.5% Coupon + 4.6% Capital Discount]
-    Yield --> FinalMaturity[Full Tax-Free Redemption at Spot Price with RBI]
+    SGB_NSE --> Yield["Yield to Maturity Boost: +2.5% Coupon + 4.6% Capital Discount"]
+    Yield --> FinalMaturity["Full Tax-Free Redemption at Spot Price with RBI"]
+
 ```
 
 ### Numerical Worked Example: SGB 2028 Tranche

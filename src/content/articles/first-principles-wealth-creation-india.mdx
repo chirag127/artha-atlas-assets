@@ -30,12 +30,13 @@ Two macroeconomic forces continually dilute the real purchasing power of the Ind
 
 ```mermaid
 graph TD
-    M3[RBI Broad Money Supply M3 Growth: 11% - 13% p.a.] --> Dilution[Macro Wealth Dilution Rate]
-    CPI[Headline Rural/Urban CPI: 5.0% - 6.0%] --> BaseCost[Basic Food & Fuel Baseline]
-    LifeStyle[Urban Middle/HNI Lifestyle Inflation: 8.5% - 10.5%] --> RealDrag[True Personal Purchasing Power Hurdle]
+    M3["RBI Broad Money Supply M3 Growth: 11% - 13% p.a."] --> Dilution["Macro Wealth Dilution Rate"]
+    CPI["Headline Rural/Urban CPI: 5.0% - 6.0%"] --> BaseCost["Basic Food & Fuel Baseline"]
+    LifeStyle["Urban Middle/HNI Lifestyle Inflation: 8.5% - 10.5%"] --> RealDrag["True Personal Purchasing Power Hurdle"]
     
-    Dilution --> Hurdle[Minimum Portfolio Return Required to Maintain Economic Status]
+    Dilution --> Hurdle["Minimum Portfolio Return Required to Maintain Economic Status"]
     RealDrag --> Hurdle
+
 ```
 
 ### A. The Monetary Supply Anchor (M3 Growth)
@@ -94,11 +95,12 @@ The gross return ($r_{\text{gross}}$) necessary to achieve this across different
 
 ```mermaid
 graph LR
-    Hurdle[Target: 3.5% Real Return over 7% Inflation]
-    Hurdle --> FD[Bank FD: Requires 15.6% Gross -> FAILS by 8.1%]
-    Hurdle --> Debt[Debt MF Sec 50AA: Requires 15.6% Gross -> FAILS by 8.4%]
-    Hurdle --> Equity[Listed Equity Sec 112A: Requires 12.3% Gross -> ACHIEVABLE]
-    Hurdle --> Gold[SGB Sec 47 viic: Requires 10.8% Gross -> ACHIEVABLE]
+    Hurdle["Target: 3.5% Real Return over 7% Inflation"]
+    Hurdle --> FD["Bank FD: Requires 15.6% Gross -> FAILS by 8.1%"]
+    Hurdle --> Debt["Debt MF Sec 50AA: Requires 15.6% Gross -> FAILS by 8.4%"]
+    Hurdle --> Equity["Listed Equity Sec 112A: Requires 12.3% Gross -> ACHIEVABLE"]
+    Hurdle --> Gold["SGB Sec 47 viic: Requires 10.8% Gross -> ACHIEVABLE"]
+
 ```
 
 ---
@@ -125,6 +127,7 @@ quadrantChart
     "Direct Operating MSME": [0.15, 0.95]
     "Traditional Endowment LIC": [0.20, 0.10]
     "Unlisted / Pre-IPO Shares": [0.25, 0.70]
+
 ```
 
 ### 1. Productive Corporate Equity (Listed Equities & Index Funds)
@@ -169,14 +172,15 @@ In the crisis scenario, selling equities after a $35\%$ crash to fund living cos
 ```mermaid
 graph TD
     subgraph Three_Tier_Liquidity_Architecture
-        T1[Tier 1: Operational Buffer<br/>0 - 12 Months Living Costs<br/>Sweep-in FDs, Overnight Funds]
-        T2[Tier 2: Medium-Term Shock Absorber<br/>1 - 4 Years Living Costs<br/>Arbitrage Funds, Short-Duration Debt, Multi-Asset]
-        T3[Tier 3: Long-Term Growth Engine<br/>5+ Years Capital Allocation<br/>Nifty 50, Midcap 150, SGB, US Equities]
+        T1["Tier 1: Operational Buffer<br/>0 - 12 Months Living Costs<br/>Sweep-in FDs, Overnight Funds"]
+        T2["Tier 2: Medium-Term Shock Absorber<br/>1 - 4 Years Living Costs<br/>Arbitrage Funds, Short-Duration Debt, Multi-Asset"]
+        T3["Tier 3: Long-Term Growth Engine<br/>5+ Years Capital Allocation<br/>Nifty 50, Midcap 150, SGB, US Equities"]
     end
     
     T1 -->|Refilled Annually from| T2
     T3 -->|Systematic Harvests during Bull Markets| T2
     T3 -.->|NEVER Liquidated during Bear Markets| T1
+
 ```
 
 ### The Three-Tier Implementation Rule

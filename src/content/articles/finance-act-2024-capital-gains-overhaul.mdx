@@ -31,15 +31,16 @@ The primary objectives declared by the Ministry of Finance were:
 
 ```mermaid
 graph TD
-    Asset[Capital Asset] --> CheckListed{Is it a Listed Security?}
-    CheckListed -- Yes --> Bucket12M[Holding Period: 12 Months]
-    CheckListed -- No --> Bucket24M[Holding Period: 24 Months]
+    Asset["Capital Asset"] --> CheckListed{Is it a Listed Security?}
+    CheckListed -- Yes --> Bucket12M["Holding Period: 12 Months"]
+    CheckListed -- No --> Bucket24M["Holding Period: 24 Months"]
     
-    Bucket12M --> EquitySTCG[Short-Term: 20% under Sec 111A]
-    Bucket12M --> EquityLTCG[Long-Term: 12.5% above ₹1.25L under Sec 112A]
+    Bucket12M --> EquitySTCG["Short-Term: 20% under Sec 111A"]
+    Bucket12M --> EquityLTCG["Long-Term: 12.5% above ₹1.25L under Sec 112A"]
     
-    Bucket24M --> OtherSTCG[Short-Term: Taxed at Marginal Slab Rate]
-    Bucket24M --> OtherLTCG[Long-Term: 12.5% Flat without Indexation under Sec 112]
+    Bucket24M --> OtherSTCG["Short-Term: Taxed at Marginal Slab Rate"]
+    Bucket24M --> OtherLTCG["Long-Term: 12.5% Flat without Indexation under Sec 112"]
+
 ```
 
 ---

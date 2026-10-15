@@ -30,14 +30,15 @@ Following widespread public representation regarding legacy properties bought de
 
 ```mermaid
 graph TD
-    Sale[Sale of Land or Building post 23-Jul-2024] --> DateCheck{When Was Property Acquired?}
-    DateCheck -- "Acquired On or After 23 July 2024" --> NewRuleOnly[Strictly 12.5% without Indexation]
-    DateCheck -- "Acquired Before 23 July 2024" --> Choice[Compare Option A vs Option B]
+    Sale["Sale of Land or Building post 23-Jul-2024"] --> DateCheck{When Was Property Acquired?}
+    DateCheck -- "Acquired On or After 23 July 2024" --> NewRuleOnly["Strictly 12.5% without Indexation"]
+    DateCheck -- "Acquired Before 23 July 2024" --> Choice["Compare Option A vs Option B"]
     
-    Choice --> OptA[Option A: 12.5% on Gross Gain without Indexation]
-    Choice --> OptB[Option B: 20% on Net Gain after CII Indexation]
-    OptA --> PayLesser[Taxpayer Lawfully Pays the LOWER Amount!]
+    Choice --> OptA["Option A: 12.5% on Gross Gain without Indexation"]
+    Choice --> OptB["Option B: 20% on Net Gain after CII Indexation"]
+    OptA --> PayLesser["Taxpayer Lawfully Pays the LOWER Amount!"]
     OptB --> PayLesser
+
 ```
 
 ---

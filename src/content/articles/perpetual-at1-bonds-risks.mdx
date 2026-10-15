@@ -33,11 +33,12 @@ In reality, an AT1 bond is **quasi-equity disguised as fixed income**. It contai
 
 ```mermaid
 graph TD
-    Liquidation[Liquidation & Bail-In Waterfall]
-    Liquidation --> Dep[1. Insured Bank Depositors & Senior Creditors: Paid First]
-    Dep --> SubDebt[2. Tier 2 Subordinated Debt: Paid Second]
-    SubDebt --> AT1[3. Additional Tier 1 AT1 Bonds: Absorbs Loss FIRST!]
-    AT1 --> Equity[4. Equity Shareholders: Common Shares]
+    Liquidation["Liquidation & Bail-In Waterfall"]
+    Liquidation --> Dep["1. Insured Bank Depositors & Senior Creditors: Paid First"]
+    Dep --> SubDebt["2. Tier 2 Subordinated Debt: Paid Second"]
+    SubDebt --> AT1["3. Additional Tier 1 AT1 Bonds: Absorbs Loss FIRST!"]
+    AT1 --> Equity["4. Equity Shareholders: Common Shares"]
+
 ```
 
 ---

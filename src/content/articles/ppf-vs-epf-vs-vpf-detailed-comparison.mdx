@@ -31,14 +31,15 @@ For conservative debt allocation, three instruments form the cornerstone of capi
 ```mermaid
 graph TD
     User{Employment Status}
-    User -- "Self-Employed / Professional" --> PPF[Public Provident Fund: ₹1.5L Annual Cap]
-    User -- "Salaried Employee" --> EPF[Mandatory EPF: 12% of Basic Salary]
-    EPF --> VPF[Optional VPF Top-Up: Up to 88% Extra Basic Salary]
+    User -- "Self-Employed / Professional" --> PPF["Public Provident Fund: ₹1.5L Annual Cap"]
+    User -- "Salaried Employee" --> EPF["Mandatory EPF: 12% of Basic Salary"]
+    EPF --> VPF["Optional VPF Top-Up: Up to 88% Extra Basic Salary"]
     
-    PPF --> EEE1[Pure EEE: 100% Tax Free Interest & Maturity]
+    PPF --> EEE1["Pure EEE: 100% Tax Free Interest & Maturity"]
     EPF --> TaxCheck{Does Employee Contribution Exceed ₹2.5L/yr?}
-    TaxCheck -- "No (<= ₹2.5L)" --> EEE2[100% Tax Free Interest]
-    TaxCheck -- "Yes (> ₹2.5L)" --> TaxSplit[Split: Excess Interest Taxed at Slab Rate!]
+    TaxCheck -- "No (<= ₹2.5L)" --> EEE2["100% Tax Free Interest"]
+    TaxCheck -- "Yes (> ₹2.5L)" --> TaxSplit["Split: Excess Interest Taxed at Slab Rate!"]
+
 ```
 
 ---

@@ -200,17 +200,27 @@ const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   mermaid.initialize({
     startOnLoad: false,
-    theme: 'dark',
+    theme: 'base',
     themeVariables: {
       darkMode: true,
       background: '#0d131f',
-      primaryColor: '#059669',
+      primaryColor: '#162032',
       primaryTextColor: '#f8fafc',
       primaryBorderColor: '#10b981',
       lineColor: '#34d399',
       secondaryColor: '#1e2c44',
       tertiaryColor: '#0f172a',
+      nodeBkg: '#162032',
+      nodeTextColor: '#f8fafc',
+      nodeBorder: '#10b981',
+      mainBkg: '#162032',
+      textColor: '#f8fafc',
+      fontSize: '13px',
       fontFamily: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    },
+    flowchart: {
+      htmlLabels: false,
+      padding: 12,
     },
     securityLevel: 'loose',
   });

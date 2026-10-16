@@ -240,3 +240,69 @@ article.prose hr,
   border-top: 1px solid #24344d !important;
   margin: 2.5rem 0 !important;
 }
+
+/* ==========================================================================
+   Mermaid Flowcharts & SVG Isolated Styles
+   ========================================================================== */
+
+article.prose .not-prose,
+.article-body .not-prose {
+  margin: 2rem 0 !important;
+}
+
+article.prose svg,
+.article-body svg,
+.not-prose svg {
+  overflow: visible !important;
+}
+
+article.prose .not-prose p,
+.article-body .not-prose p,
+.not-prose svg p,
+svg p,
+.nodeLabel,
+.nodeLabel p,
+.nodeLabel span,
+.label foreignObject p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: normal !important;
+  font-size: inherit !important;
+  color: inherit !important;
+}
+
+/* Force high-contrast legible font rendering inside Mermaid nodes */
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+.node path {
+  fill: #162032 !important;
+  stroke: #10b981 !important;
+  stroke-width: 1.5px !important;
+}
+
+.node text,
+.node tspan,
+.node .label,
+.nodeLabel {
+  fill: #f8fafc !important;
+  color: #f8fafc !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.edgePath .path,
+.flowchart-link {
+  stroke: #34d399 !important;
+  stroke-width: 1.5px !important;
+}
+
+.marker,
+#flowchart-pointEnd,
+#flowchart-pointStart {
+  fill: #34d399 !important;
+  stroke: #34d399 !important;
+}
+

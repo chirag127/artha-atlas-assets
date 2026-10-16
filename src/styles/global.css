@@ -280,6 +280,8 @@ svg p,
   fill: #162032 !important;
   stroke: #10b981 !important;
   stroke-width: 1.5px !important;
+  rx: 6px !important;
+  ry: 6px !important;
 }
 
 .node text,
@@ -288,9 +290,10 @@ svg p,
 .nodeLabel {
   fill: #f8fafc !important;
   color: #f8fafc !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   font-size: 13px !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  letter-spacing: 0.01em !important;
 }
 
 .edgePath .path,
